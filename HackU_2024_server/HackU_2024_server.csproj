@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MasterMemory" Version="2.4.4" />
+      <PackageReference Include="MasterMemory.MSBuild.Tasks" Version="2.4.4" />
+      <PackageReference Include="UniTask" Version="2.5.10" />
+    </ItemGroup>
+
+    <!-- Call code generator before-build. -->
+    <Target Name="MasterMemoryGen" BeforeTargets="BeforeBuild">
+        <!-- Configuration of Code-Generator, `UsingNamespace`, `InputDirectory`, `OutputDirectory` and `AddImmutableConstructor`. -->
+        <MasterMemoryGenerator UsingNamespace="$(ProjectName)" InputDirectory="$(ProjectDir)" OutputDirectory="$(ProjectDir)MasterMemory" />
+    </Target>
+
+</Project>

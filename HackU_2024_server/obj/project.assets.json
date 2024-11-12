@@ -1,0 +1,629 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "MasterMemory/2.4.4": {
+        "type": "package",
+        "dependencies": {
+          "MasterMemory.Annotations": "2.4.4",
+          "MessagePack": "2.1.90"
+        },
+        "compile": {
+          "lib/netstandard2.0/MasterMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MasterMemory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MasterMemory.Annotations/2.4.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MasterMemory.Annotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MasterMemory.Annotations.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MasterMemory.MSBuild.Tasks/2.4.4": {
+        "type": "package",
+        "build": {
+          "build/MasterMemory.MSBuild.Tasks.props": {}
+        }
+      },
+      "MessagePack/2.1.90": {
+        "type": "package",
+        "dependencies": {
+          "MessagePack.Annotations": "2.1.90",
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "System.Memory": "4.5.3",
+          "System.Reflection.Emit": "4.6.0",
+          "System.Reflection.Emit.Lightweight": "4.6.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "System.Threading.Tasks.Extensions": "4.5.3"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/MessagePack.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/MessagePack.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MessagePack.Annotations/2.1.90": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MessagePack.Annotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MessagePack.Annotations.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.3": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Reflection.Emit/4.6.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Reflection.Emit.Lightweight/4.6.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "UniTask/2.5.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/net7.0/UniTask.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/UniTask.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MasterMemory/2.4.4": {
+      "sha512": "fz0LzEyde4d0Brnipy7sRkmL4NDHsZqCmMucFu7PYJwD9elgw2qVS2/Z7wMaiGORVjMRXoUDN13mgx4I5O76hA==",
+      "type": "package",
+      "path": "mastermemory/2.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MasterMemory.dll",
+        "lib/netstandard2.0/MasterMemory.xml",
+        "mastermemory.2.4.4.nupkg.sha512",
+        "mastermemory.nuspec"
+      ]
+    },
+    "MasterMemory.Annotations/2.4.4": {
+      "sha512": "1kRFIk46fWRhWC6MScgB3Zse1KTpqSY4wnOAlVjEyF6RHm/D/gvSaYGL5kO6RWWDR/vqtvC+57nvdEBPyVjfhA==",
+      "type": "package",
+      "path": "mastermemory.annotations/2.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MasterMemory.Annotations.dll",
+        "lib/netstandard2.0/MasterMemory.Annotations.xml",
+        "mastermemory.annotations.2.4.4.nupkg.sha512",
+        "mastermemory.annotations.nuspec"
+      ]
+    },
+    "MasterMemory.MSBuild.Tasks/2.4.4": {
+      "sha512": "FdeKN6CiIA9RuWS06Y9em07OHBCTCoy8tLpEmwbIujmLX3BublYVt70l8LuVzEpfDzjysQy5aoN4F31nSdiLzg==",
+      "type": "package",
+      "path": "mastermemory.msbuild.tasks/2.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MasterMemory.MSBuild.Tasks.props",
+        "mastermemory.msbuild.tasks.2.4.4.nupkg.sha512",
+        "mastermemory.msbuild.tasks.nuspec",
+        "tasks/netstandard2.0/MasterMemory.GeneratorCore.dll",
+        "tasks/netstandard2.0/MasterMemory.MSBuild.Tasks.dll",
+        "tasks/netstandard2.0/Microsoft.Build.Framework.dll",
+        "tasks/netstandard2.0/Microsoft.Build.Utilities.Core.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.dll",
+        "tasks/netstandard2.0/System.Buffers.dll",
+        "tasks/netstandard2.0/System.CodeDom.dll",
+        "tasks/netstandard2.0/System.Collections.Immutable.dll",
+        "tasks/netstandard2.0/System.Composition.AttributedModel.dll",
+        "tasks/netstandard2.0/System.Composition.Convention.dll",
+        "tasks/netstandard2.0/System.Composition.Hosting.dll",
+        "tasks/netstandard2.0/System.Composition.Runtime.dll",
+        "tasks/netstandard2.0/System.Composition.TypedParts.dll",
+        "tasks/netstandard2.0/System.Linq.Expressions.dll",
+        "tasks/netstandard2.0/System.Linq.dll",
+        "tasks/netstandard2.0/System.Memory.dll",
+        "tasks/netstandard2.0/System.Numerics.Vectors.dll",
+        "tasks/netstandard2.0/System.ObjectModel.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.ILGeneration.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.dll",
+        "tasks/netstandard2.0/System.Reflection.Metadata.dll",
+        "tasks/netstandard2.0/System.Reflection.TypeExtensions.dll",
+        "tasks/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "tasks/netstandard2.0/System.Runtime.Serialization.Primitives.dll",
+        "tasks/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "tasks/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "tasks/netstandard2.0/System.Threading.Thread.dll",
+        "tasks/netstandard2.0/System.Threading.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll"
+      ]
+    },
+    "MessagePack/2.1.90": {
+      "sha512": "frdAkIQyILYjAhH8Q107N77eccLjnkYr8/L+3vHeCezI0rvfCB2xiZjin936QFtskLBmgW1D9y6bKs45zddVLQ==",
+      "type": "package",
+      "path": "messagepack/2.1.90",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netcoreapp2.1/MessagePack.dll",
+        "lib/netcoreapp2.1/MessagePack.xml",
+        "lib/netstandard2.0/MessagePack.dll",
+        "lib/netstandard2.0/MessagePack.xml",
+        "messagepack.2.1.90.nupkg.sha512",
+        "messagepack.nuspec"
+      ]
+    },
+    "MessagePack.Annotations/2.1.90": {
+      "sha512": "YnS4qdOMFJuC8TDvXK8ECjWn+hI/B6apwMSgQsiynVXxsvFiiSyun7OXgVT7KxkR8qLinFuASzoG/5zv3kemwQ==",
+      "type": "package",
+      "path": "messagepack.annotations/2.1.90",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/MessagePack.Annotations.dll",
+        "lib/netstandard2.0/MessagePack.Annotations.xml",
+        "messagepack.annotations.2.1.90.nupkg.sha512",
+        "messagepack.annotations.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+      "sha512": "K63Y4hORbBcKLWH5wnKgzyn7TOfYzevIEwIedQHBIkmkEBA9SCqgvom+XTuE+fAFGvINGkhFItaZ2dvMGdT5iw==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "type": "package",
+      "path": "system.memory/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Reflection.Emit/4.6.0": {
+      "sha512": "qAo4jyXtC9i71iElngX7P2r+zLaiHzxKwf66sc3X91tL5Ks6fnQ1vxL04o7ZSm3sYfLExySL7GN8aTpNYpU1qw==",
+      "type": "package",
+      "path": "system.reflection.emit/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/monoandroid10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Reflection.Emit.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Reflection.Emit.dll",
+        "lib/netstandard1.1/System.Reflection.Emit.xml",
+        "lib/netstandard1.3/System.Reflection.Emit.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.xml",
+        "lib/netstandard2.1/_._",
+        "lib/xamarinmac20/_._",
+        "ref/monoandroid10/_._",
+        "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Reflection.Emit.dll",
+        "ref/netstandard1.1/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/de/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/es/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/fr/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/it/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/ja/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/ko/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/ru/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/zh-hans/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/zh-hant/System.Reflection.Emit.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.xml",
+        "ref/netstandard2.1/_._",
+        "ref/xamarinmac20/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.xml",
+        "system.reflection.emit.4.6.0.nupkg.sha512",
+        "system.reflection.emit.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Reflection.Emit.Lightweight/4.6.0": {
+      "sha512": "j/V5HVvxvBQ7uubYD0PptQW2KGsi1Pc2kZ9yfwLixv3ADdjL/4M78KyC5e+ymW612DY8ZE4PFoZmWpoNmN2mqg==",
+      "type": "package",
+      "path": "system.reflection.emit.lightweight/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard2.1/_._",
+        "lib/portable-net45+wp8/_._",
+        "lib/wp80/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/de/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/es/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/fr/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/it/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ja/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ko/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ru/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.1/_._",
+        "ref/portable-net45+wp8/_._",
+        "ref/wp80/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.xml",
+        "system.reflection.emit.lightweight.4.6.0.nupkg.sha512",
+        "system.reflection.emit.lightweight.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/net461/System.Threading.Tasks.Extensions.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "UniTask/2.5.10": {
+      "sha512": "Ykx4+upma5Mg9Y4RhiN04vWh7ignHwJkyyWXPYJODl0fE39cHNKie//9pbheRmtJV8fEfnFAeRDlyfMZQ6UjjQ==",
+      "type": "package",
+      "path": "unitask/2.5.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/UniTask.dll",
+        "lib/net6.0/UniTask.xml",
+        "lib/net7.0/UniTask.dll",
+        "lib/net7.0/UniTask.xml",
+        "lib/netstandard2.0/UniTask.dll",
+        "lib/netstandard2.0/UniTask.xml",
+        "lib/netstandard2.1/UniTask.dll",
+        "lib/netstandard2.1/UniTask.xml",
+        "unitask.2.5.10.nupkg.sha512",
+        "unitask.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "MasterMemory >= 2.4.4",
+      "MasterMemory.MSBuild.Tasks >= 2.4.4",
+      "UniTask >= 2.5.10"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ukai\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\ukai\\RiderProjects\\HackU_2024_server\\HackU_2024_server\\HackU_2024_server.csproj",
+      "projectName": "HackU_2024_server",
+      "projectPath": "C:\\Users\\ukai\\RiderProjects\\HackU_2024_server\\HackU_2024_server\\HackU_2024_server.csproj",
+      "packagesPath": "C:\\Users\\ukai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ukai\\RiderProjects\\HackU_2024_server\\HackU_2024_server\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\ukai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "MasterMemory": {
+            "target": "Package",
+            "version": "[2.4.4, )"
+          },
+          "MasterMemory.MSBuild.Tasks": {
+            "target": "Package",
+            "version": "[2.4.4, )"
+          },
+          "UniTask": {
+            "target": "Package",
+            "version": "[2.5.10, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
