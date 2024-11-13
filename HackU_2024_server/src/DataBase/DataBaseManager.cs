@@ -4,11 +4,11 @@ using Cysharp.Threading.Tasks;
 namespace HackU_2024_server.DataBase;
 
 public static class DataBaseManager{
-    private static DataBaseBuilder _builder = new();
+    private static readonly DatabaseBuilder Builder = new();
     private static MemoryDatabase _db;
     
-    public DataBaseManager(){
-        _db = new MemoryDatabase(_builder.Build());
+    static DataBaseManager(){
+        _db = new MemoryDatabase(Builder.Build());
     }
 
     public static void AddClientData(in ClientData client){
@@ -17,7 +17,7 @@ public static class DataBaseManager{
         _db = builder.Build();
     }
 
-    public static Range<ClientData> GetClients(in string? roomName = null){
-        return roomName is null ? _db.ClientDataTable.All : _db.ClientDataTable.FindByRoomName(roomName.Value);
+    public static RangeView<ClientData> GetClients(in string? roomName = null){
+        return roomName is null ? _db.ClientDataTable.All : _db.ClientDataTable.FindByRoomName(roomName);
     }
 }
