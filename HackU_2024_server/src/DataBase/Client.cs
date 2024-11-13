@@ -6,17 +6,16 @@ using MessagePack;
 
 namespace HackU_2024_server.DataBase;
 
-[MemoryTable("ClientData")]
+[MemoryTable("Client")]
 [MessagePackObject(true)]
-public class ClientData : IDisposable
+public class Client : IDisposable
 {
     [PrimaryKey] public string GlobalUserId => UserID + RoomName;
 
-    [SecondaryKey(0) , NonUnique]
-    public int UserID { get; set; }
+    [SecondaryKey(0), NonUnique] public int UserID { get; set; } = 0;
 
     [SecondaryKey(1) , NonUnique]
-    public string RoomName { get; set; }
+    public string RoomName { get; set; } = string.Empty;
 
     public string DisplayName { get; set; } = string.Empty;
     

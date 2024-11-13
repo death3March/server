@@ -40,9 +40,9 @@ public static class Server
 
     private static async UniTask ReceiveHandler(HttpListenerContext context)
     {
-        var client = new ClientData();
+        var client = new Client();
         await client.InitializeAsync(context);
-        // TODO:save client obj to MasterMemory
+        DataBaseManager.AddClientData(client);
     }
 
     public static void Stop()
