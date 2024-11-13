@@ -27,6 +27,34 @@ public class Client : IDisposable
         Socket = taskHttpListenerContext.WebSocket;
     }
 
+    public async UniTask StartReceive(Func<Client, byte[], UniTask> receiveHandler, Func<Client, UniTask> closeHandler)
+    {
+        while (Socket is { State: WebSocketState.Connecting })
+        {
+            // receive data
+            var buffer = new byte[1024];
+            var result = await Socket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+            if (result.MessageType == WebSocketMessageType.Close)
+            {
+                await Socket.CloseAsync(WebSocketCloseStatus.NormalClosure, string.Empty, CancellationToken.None);
+                await closeHandler(this);
+                break;
+            }
+            
+            // handle received data
+            await receiveHandler(this, buffer);
+        }
+
+        await closeHandler(this);
+    }
+    
+    public async UniTask SendAsync(byte[] data)
+    {
+        if (Socket != null)
+            await Socket.SendAsync(new ArraySegment<byte>(data), WebSocketMessageType.Binary, true,
+                CancellationToken.None);
+    }
+
     public void Dispose()
     {
         Socket?.Dispose();
