@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.29.0-rc2" />
       <PackageReference Include="MasterMemory" Version="2.4.4" />
       <PackageReference Include="MasterMemory.MSBuild.Tasks" Version="2.4.4" />
       <PackageReference Include="UniTask" Version="2.5.10" />

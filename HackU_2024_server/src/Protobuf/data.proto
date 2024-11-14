@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+message Data {
+  oneof type {
+    string roomName = 1;
+    Point point = 2;
+    string DisplayName = 3;
+    string message = 4;
+    string newUserID = 5;
+  }
+  string userID = 6;
+}
+
+message Point {
+  float x = 1;
+  float y = 2;
+}

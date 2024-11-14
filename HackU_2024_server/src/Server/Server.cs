@@ -45,6 +45,26 @@ public static class Server
         var clients = DataBaseManager.GetClients(client.RoomName).ToArray();
         foreach (var c in clients)
         {
+            var receiveData = Data.Parser.ParseFrom(data);
+            switch (receiveData.TypeCase)
+            {
+                case Data.TypeOneofCase.RoomName:
+                    c.RoomName = receiveData.RoomName;
+                    break;
+                case Data.TypeOneofCase.DisplayName:
+                    c.DisplayName = receiveData.DisplayName;
+                    break;
+                case Data.TypeOneofCase.Message:
+                    break;
+                case Data.TypeOneofCase.Point:
+                    break;
+                case Data.TypeOneofCase.NewUserID:
+                    break;
+                case Data.TypeOneofCase.None:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
             if (c.Socket == null) continue;
             await c.SendAsync(data);
         }
