@@ -12,6 +12,8 @@ public static class Server
     
     public static async UniTask Start()
     {
+        Console.WriteLine("Server Start");
+        
         _isRunning = true;
         
         HttpListener.Prefixes.Add("http://127.0.0.1:8080/");
@@ -24,6 +26,7 @@ public static class Server
             {
                 context.Response.StatusCode = 400;	// bad request
                 context.Response.Close();
+                Console.WriteLine("Not WebSocket Request");
                 continue;
             }
             ReceiveHandler(context).Forget();
@@ -50,20 +53,25 @@ public static class Server
             {
                 case Data.TypeOneofCase.RoomName:
                     c.RoomName = receiveData.RoomName;
+                    Console.WriteLine("RoomName: " + c.RoomName);
                     break;
                 case Data.TypeOneofCase.DisplayName:
                     c.DisplayName = receiveData.DisplayName;
+                    Console.WriteLine("DisplayName: " + c.DisplayName);
                     break;
                 case Data.TypeOneofCase.Message:
+                    Console.WriteLine("Message: " + receiveData.Message);
                     break;
                 case Data.TypeOneofCase.Point:
+                    Console.WriteLine("Point: " + receiveData.Point);
                     break;
                 case Data.TypeOneofCase.NewUserID:
+                    Console.WriteLine("NewUserID: " + receiveData.NewUserID);
                     break;
                 case Data.TypeOneofCase.None:
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException(nameof(client), receiveData.TypeCase.ToString());
             }
             if (c.Socket == null) continue;
             await c.SendAsync(data);
