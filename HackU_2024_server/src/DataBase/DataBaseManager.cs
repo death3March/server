@@ -20,4 +20,12 @@ public static class DataBaseManager{
     public static RangeView<Client> GetClients(in string? roomName = null){
         return roomName is null ? _db.ClientTable.All : _db.ClientTable.FindByRoomName(roomName);
     }
+    
+    public static void RemoveClientData(in Client client){
+        var builder = _db.ToImmutableBuilder();
+        builder.RemoveClient([
+            client.GlobalUserId
+        ]);
+        _db = builder.Build();
+    }
 }

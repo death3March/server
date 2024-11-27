@@ -22,6 +22,8 @@ public static class Server
         while (_isRunning)
         {
             var context = await HttpListener.GetContextAsync();
+            Console.WriteLine(context.Request.ToString());
+            Console.WriteLine(context.Request.IsWebSocketRequest);
             if (!context.Request.IsWebSocketRequest)
             {
                 context.Response.StatusCode = 400;	// bad request
@@ -35,12 +37,13 @@ public static class Server
 
     private static async UniTask CloseHandler(Client client)
     {
-        var clients = DataBaseManager.GetClients(client.RoomName).ToArray();
+        var clients = DataBaseManager.GetClients(client.RoomName).Where(c => c.GlobalUserId != client.GlobalUserId);
         foreach (var c in clients)
         {
             if (c.Socket != null)
                 await c.Socket.CloseAsync(WebSocketCloseStatus.Empty, string.Empty, CancellationToken.None);
         }
+        DataBaseManager.RemoveClientData(client);
     }
 
     private static async UniTask ClientHandler(Client client, byte[] data)
@@ -84,6 +87,7 @@ public static class Server
         await client.InitializeAsync(context);
         client.StartReceive(ClientHandler, CloseHandler).Forget();
         DataBaseManager.AddClientData(client);
+        Console.WriteLine("Client Added");
     }
 
     public static void Stop()
