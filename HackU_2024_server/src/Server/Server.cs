@@ -1,5 +1,7 @@
 ﻿using System.Net.WebSockets;
 using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using Cysharp.Threading.Tasks;
 using HackU_2024_server.DataBase;
 
@@ -8,7 +10,7 @@ namespace HackU_2024_server.Server;
 public static class Server
 {
     private static bool _isRunning;
-    private static readonly HttpListener HttpListener = new();
+    private static readonly TcpListener TcpListener = new(IPAddress.Loopback, 8080);
     
     public static async UniTask Start()
     {
@@ -16,22 +18,12 @@ public static class Server
         
         _isRunning = true;
         
-        HttpListener.Prefixes.Add("http://127.0.0.1:8080/");
-        HttpListener.Start();
+        TcpListener.Start();
 
         while (_isRunning)
         {
-            var context = await HttpListener.GetContextAsync();
-            Console.WriteLine(context.Request.ToString());
-            Console.WriteLine(context.Request.IsWebSocketRequest);
-            if (!context.Request.IsWebSocketRequest)
-            {
-                context.Response.StatusCode = 400;	// bad request
-                context.Response.Close();
-                Console.WriteLine("Not WebSocket Request");
-                continue;
-            }
-            ReceiveHandler(context).Forget();
+            var client = await TcpListener.AcceptTcpClientAsync();
+            ReceiveHandler(client).Forget();
         }
     }
 
@@ -81,10 +73,10 @@ public static class Server
         }
     }
 
-    private static async UniTask ReceiveHandler(HttpListenerContext context)
+    private static async UniTask ReceiveHandler(TcpClient tcpClient)
     {
         var client = new Client();
-        await client.InitializeAsync(context);
+        await client.InitializeAsync(tcpClient);
         client.StartReceive(ClientHandler, CloseHandler).Forget();
         DataBaseManager.AddClientData(client);
         Console.WriteLine("Client Added");
@@ -93,7 +85,5 @@ public static class Server
     public static void Stop()
     {
         _isRunning = false;
-        HttpListener.Stop();
-        HttpListener.Close();
     }
 }
