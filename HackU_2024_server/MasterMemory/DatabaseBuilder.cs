@@ -6,8 +6,10 @@ using MasterMemory.Validation;
 using MasterMemory;
 using MessagePack;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Net.WebSockets;
 using System.Net;
+using System.Text;
 using System;
 using HackU_2024_server.Tables;
 
