@@ -10,7 +10,7 @@ namespace HackU_2024_server.Server;
 public static class Server
 {
     private static bool _isRunning;
-    private static readonly TcpListener TcpListener = new(IPAddress.Loopback, 8080);
+    private static readonly TcpListener TcpListener = new(IPAddress.Any, 8080);
     
     public static async UniTask Start()
     {
