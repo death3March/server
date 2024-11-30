@@ -65,6 +65,7 @@ public static class Server
                     break;
                 case Data.TypeOneofCase.None:
                     break;
+                case Data.TypeOneofCase.Event:
                 default:
                     throw new ArgumentOutOfRangeException(nameof(client), receiveData.TypeCase.ToString());
             }

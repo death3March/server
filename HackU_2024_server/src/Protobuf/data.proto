@@ -7,6 +7,7 @@ message Data {
     string DisplayName = 3;
     string message = 4;
     string newUserID = 5;
+    string event = 7;
   }
   string userID = 6;
 }
