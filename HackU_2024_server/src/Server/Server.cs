@@ -1,9 +1,9 @@
 ﻿using System.Net.WebSockets;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using Cysharp.Threading.Tasks;
 using HackU_2024_server.DataBase;
+using HackU_2024_server.Service;
 
 namespace HackU_2024_server.Server;
 
@@ -40,38 +40,8 @@ public static class Server
 
     private static async UniTask ClientHandler(Client client, byte[] data)
     {
-        var clients = DataBaseManager.GetClients(client.RoomName).ToArray();
-        foreach (var c in clients)
-        {
-            var receiveData = Data.Parser.ParseFrom(data);
-            switch (receiveData.TypeCase)
-            {
-                case Data.TypeOneofCase.RoomName:
-                    c.RoomName = receiveData.RoomName;
-                    Console.WriteLine("RoomName: " + c.RoomName);
-                    break;
-                case Data.TypeOneofCase.DisplayName:
-                    c.DisplayName = receiveData.DisplayName;
-                    Console.WriteLine("DisplayName: " + c.DisplayName);
-                    break;
-                case Data.TypeOneofCase.Message:
-                    Console.WriteLine("Message: " + receiveData.Message);
-                    break;
-                case Data.TypeOneofCase.Point:
-                    Console.WriteLine("Point: " + receiveData.Point);
-                    break;
-                case Data.TypeOneofCase.NewUserID:
-                    Console.WriteLine("NewUserID: " + receiveData.NewUserID);
-                    break;
-                case Data.TypeOneofCase.None:
-                    break;
-                case Data.TypeOneofCase.Event:
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(client), receiveData.TypeCase.ToString());
-            }
-            if (c.Socket == null) continue;
-            await c.SendAsync(data);
-        }
+        var recvData = Data.Parser.ParseFrom(data);
+        await EventService.OnEventAsync(client, recvData);
     }
 
     private static async UniTask ReceiveHandler(TcpClient tcpClient)

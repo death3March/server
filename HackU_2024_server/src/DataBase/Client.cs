@@ -14,7 +14,7 @@ public partial class Client : IDisposable
 {
     [PrimaryKey] public string GlobalUserId => UserID + RoomName;
 
-    [SecondaryKey(0), NonUnique] public int UserID { get; set; } = 0;
+    [SecondaryKey(0), NonUnique] public string UserID { get; set; } = string.Empty;
 
     [SecondaryKey(1) , NonUnique]
     public string RoomName { get; set; } = string.Empty;
@@ -24,6 +24,10 @@ public partial class Client : IDisposable
     public WebSocket? Socket { get; set; }
     
     private TcpClient? TcpClient { get; set; }
+
+    public int Otoshidama { get; set; } = 0;
+
+    public int Position { get; set; } = 0;
 
     public async UniTask InitializeAsync(TcpClient tcpClient)
     {

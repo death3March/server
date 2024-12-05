@@ -13,7 +13,13 @@ public static class DataBaseManager{
 
     public static void AddClientData(in Client client){
         var builder = _db.ToImmutableBuilder();
-        builder.Diff(new[] { client });
+        builder.Diff([client]);
+        _db = builder.Build();
+    }
+    
+    public static void UpdateClientData(in Client client){
+        var builder = _db.ToImmutableBuilder();
+        builder.Diff([client]);
         _db = builder.Build();
     }
 

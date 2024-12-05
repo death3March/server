@@ -22,21 +22,52 @@ public static partial class DataReflection {
   static DataReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgpkYXRhLnByb3RvIpsBCgREYXRhEhIKCHJvb21OYW1lGAEgASgJSAASFwoF",
-          "cG9pbnQYAiABKAsyBi5Qb2ludEgAEhUKC0Rpc3BsYXlOYW1lGAMgASgJSAAS",
-          "EQoHbWVzc2FnZRgEIAEoCUgAEhMKCW5ld1VzZXJJRBgFIAEoCUgAEg8KBWV2",
-          "ZW50GAcgASgJSAASDgoGdXNlcklEGAYgASgJQgYKBHR5cGUiHQoFUG9pbnQS",
-          "CQoBeBgBIAEoAhIJCgF5GAIgASgCYgZwcm90bzM="));
+          "CgpkYXRhLnByb3RvIrYCCgREYXRhEhIKCHJvb21OYW1lGAEgASgJSAASEgoI",
+          "cG9zaXRpb24YAiABKAVIABIVCgtEaXNwbGF5TmFtZRgDIAEoCUgAEhEKB21l",
+          "c3NhZ2UYBCABKAlIABITCgluZXdVc2VySUQYBSABKAlIABIXCgVldmVudBgH",
+          "IAEoDjIGLkV2ZW50SAASIQoKb3Rvc2hpZGFtYRgIIAEoCzILLk90b3NoaWRh",
+          "bWFIABIdCghyb3VsZXR0ZRgLIAEoCzIJLlJvdWxldHRlSAASGQoGc3BhY2Vz",
+          "GAkgASgLMgcuU3BhY2VzSAASGQoPb3Rvc2hpZGFtYVRvdGFsGAwgASgFSAAS",
+          "DgoGdXNlcklEGAYgASgJEhMKBnJlc3VsdBgKIAEoCUgBiAEBQgYKBHR5cGVC",
+          "CQoHX3Jlc3VsdCIgCgZTcGFjZXMSFgoGc3BhY2VzGAEgAygOMgYuU3BhY2Ui",
+          "LAoKT3Rvc2hpZGFtYRIOCgZ1c2VySUQYASABKAkSDgoGYW1vdW50GAIgASgF",
+          "IioKCFJvdWxldHRlEg4KBnVzZXJJRBgBIAEoCRIOCgZudW1iZXIYAiABKAUq",
+          "SQoFRXZlbnQSDAoIUk9VTEVUVEUQABIOCgpPVE9TSElEQU1BEAESDQoJRlVS",
+          "SURBU0hJEAISCAoESk9JThADEgkKBUxFQVZFEAQqZwoFU3BhY2USDwoLU1RB",
+          "UlRfU1BBQ0UQABIOCgpHT0FMX1NQQUNFEAESFAoQT1RPU0hJREFNQV9TUEFD",
+          "RRACEhIKDlJPVUxFVFRFX1NQQUNFEAMSEwoPRlVSSURBU0hJX1NQQUNFEARi",
+          "BnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Data), global::Data.Parser, new[]{ "RoomName", "Point", "DisplayName", "Message", "NewUserID", "Event", "UserID" }, new[]{ "Type" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::Point), global::Point.Parser, new[]{ "X", "Y" }, null, null, null, null)
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Event), typeof(global::Space), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(typeof(global::Data), global::Data.Parser, new[]{ "RoomName", "Position", "DisplayName", "Message", "NewUserID", "Event", "Otoshidama", "Roulette", "Spaces", "OtoshidamaTotal", "UserID", "Result" }, new[]{ "Type", "Result" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Spaces), global::Spaces.Parser, new[]{ "Spaces_" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Otoshidama), global::Otoshidama.Parser, new[]{ "UserID", "Amount" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Roulette), global::Roulette.Parser, new[]{ "UserID", "Number" }, null, null, null, null)
         }));
   }
   #endregion
 
 }
+#region Enums
+public enum Event {
+  [pbr::OriginalName("ROULETTE")] Roulette = 0,
+  [pbr::OriginalName("OTOSHIDAMA")] Otoshidama = 1,
+  [pbr::OriginalName("FURIDASHI")] Furidashi = 2,
+  [pbr::OriginalName("JOIN")] Join = 3,
+  [pbr::OriginalName("LEAVE")] Leave = 4,
+}
+
+public enum Space {
+  [pbr::OriginalName("START_SPACE")] StartSpace = 0,
+  [pbr::OriginalName("GOAL_SPACE")] GoalSpace = 1,
+  [pbr::OriginalName("OTOSHIDAMA_SPACE")] OtoshidamaSpace = 2,
+  [pbr::OriginalName("ROULETTE_SPACE")] RouletteSpace = 3,
+  [pbr::OriginalName("FURIDASHI_SPACE")] FuridashiSpace = 4,
+}
+
+#endregion
+
 #region Messages
 [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 public sealed partial class Data : pb::IMessage<Data>
@@ -74,12 +105,13 @@ public sealed partial class Data : pb::IMessage<Data>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public Data(Data other) : this() {
     userID_ = other.userID_;
+    result_ = other.result_;
     switch (other.TypeCase) {
       case TypeOneofCase.RoomName:
         RoomName = other.RoomName;
         break;
-      case TypeOneofCase.Point:
-        Point = other.Point.Clone();
+      case TypeOneofCase.Position:
+        Position = other.Position;
         break;
       case TypeOneofCase.DisplayName:
         DisplayName = other.DisplayName;
@@ -92,6 +124,18 @@ public sealed partial class Data : pb::IMessage<Data>
         break;
       case TypeOneofCase.Event:
         Event = other.Event;
+        break;
+      case TypeOneofCase.Otoshidama:
+        Otoshidama = other.Otoshidama.Clone();
+        break;
+      case TypeOneofCase.Roulette:
+        Roulette = other.Roulette.Clone();
+        break;
+      case TypeOneofCase.Spaces:
+        Spaces = other.Spaces.Clone();
+        break;
+      case TypeOneofCase.OtoshidamaTotal:
+        OtoshidamaTotal = other.OtoshidamaTotal;
         break;
     }
 
@@ -130,15 +174,29 @@ public sealed partial class Data : pb::IMessage<Data>
     }
   }
 
-  /// <summary>Field number for the "point" field.</summary>
-  public const int PointFieldNumber = 2;
+  /// <summary>Field number for the "position" field.</summary>
+  public const int PositionFieldNumber = 2;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Point Point {
-    get { return typeCase_ == TypeOneofCase.Point ? (global::Point) type_ : null; }
+  public int Position {
+    get { return HasPosition ? (int) type_ : 0; }
     set {
       type_ = value;
-      typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Point;
+      typeCase_ = TypeOneofCase.Position;
+    }
+  }
+  /// <summary>Gets whether the "position" field is set</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool HasPosition {
+    get { return typeCase_ == TypeOneofCase.Position; }
+  }
+  /// <summary> Clears the value of the oneof if it's currently set to "position" </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void ClearPosition() {
+    if (HasPosition) {
+      ClearType();
     }
   }
 
@@ -224,10 +282,10 @@ public sealed partial class Data : pb::IMessage<Data>
   public const int EventFieldNumber = 7;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Event {
-    get { return HasEvent ? (string) type_ : ""; }
+  public global::Event Event {
+    get { return HasEvent ? (global::Event) type_ : global::Event.Roulette; }
     set {
-      type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      type_ = value;
       typeCase_ = TypeOneofCase.Event;
     }
   }
@@ -246,6 +304,68 @@ public sealed partial class Data : pb::IMessage<Data>
     }
   }
 
+  /// <summary>Field number for the "otoshidama" field.</summary>
+  public const int OtoshidamaFieldNumber = 8;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public global::Otoshidama Otoshidama {
+    get { return typeCase_ == TypeOneofCase.Otoshidama ? (global::Otoshidama) type_ : null; }
+    set {
+      type_ = value;
+      typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Otoshidama;
+    }
+  }
+
+  /// <summary>Field number for the "roulette" field.</summary>
+  public const int RouletteFieldNumber = 11;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public global::Roulette Roulette {
+    get { return typeCase_ == TypeOneofCase.Roulette ? (global::Roulette) type_ : null; }
+    set {
+      type_ = value;
+      typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Roulette;
+    }
+  }
+
+  /// <summary>Field number for the "spaces" field.</summary>
+  public const int SpacesFieldNumber = 9;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public global::Spaces Spaces {
+    get { return typeCase_ == TypeOneofCase.Spaces ? (global::Spaces) type_ : null; }
+    set {
+      type_ = value;
+      typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Spaces;
+    }
+  }
+
+  /// <summary>Field number for the "otoshidamaTotal" field.</summary>
+  public const int OtoshidamaTotalFieldNumber = 12;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int OtoshidamaTotal {
+    get { return HasOtoshidamaTotal ? (int) type_ : 0; }
+    set {
+      type_ = value;
+      typeCase_ = TypeOneofCase.OtoshidamaTotal;
+    }
+  }
+  /// <summary>Gets whether the "otoshidamaTotal" field is set</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool HasOtoshidamaTotal {
+    get { return typeCase_ == TypeOneofCase.OtoshidamaTotal; }
+  }
+  /// <summary> Clears the value of the oneof if it's currently set to "otoshidamaTotal" </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void ClearOtoshidamaTotal() {
+    if (HasOtoshidamaTotal) {
+      ClearType();
+    }
+  }
+
   /// <summary>Field number for the "userID" field.</summary>
   public const int UserIDFieldNumber = 6;
   private string userID_ = "";
@@ -258,16 +378,46 @@ public sealed partial class Data : pb::IMessage<Data>
     }
   }
 
+  /// <summary>Field number for the "result" field.</summary>
+  public const int ResultFieldNumber = 10;
+  private readonly static string ResultDefaultValue = "";
+
+  private string result_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Result {
+    get { return result_ ?? ResultDefaultValue; }
+    set {
+      result_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+  /// <summary>Gets whether the "result" field is set</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool HasResult {
+    get { return result_ != null; }
+  }
+  /// <summary>Clears the value of the "result" field</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void ClearResult() {
+    result_ = null;
+  }
+
   private object type_;
   /// <summary>Enum of possible cases for the "type" oneof.</summary>
   public enum TypeOneofCase {
     None = 0,
     RoomName = 1,
-    Point = 2,
+    Position = 2,
     DisplayName = 3,
     Message = 4,
     NewUserID = 5,
     Event = 7,
+    Otoshidama = 8,
+    Roulette = 11,
+    Spaces = 9,
+    OtoshidamaTotal = 12,
   }
   private TypeOneofCase typeCase_ = TypeOneofCase.None;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -299,12 +449,17 @@ public sealed partial class Data : pb::IMessage<Data>
       return true;
     }
     if (RoomName != other.RoomName) return false;
-    if (!object.Equals(Point, other.Point)) return false;
+    if (Position != other.Position) return false;
     if (DisplayName != other.DisplayName) return false;
     if (Message != other.Message) return false;
     if (NewUserID != other.NewUserID) return false;
     if (Event != other.Event) return false;
+    if (!object.Equals(Otoshidama, other.Otoshidama)) return false;
+    if (!object.Equals(Roulette, other.Roulette)) return false;
+    if (!object.Equals(Spaces, other.Spaces)) return false;
+    if (OtoshidamaTotal != other.OtoshidamaTotal) return false;
     if (UserID != other.UserID) return false;
+    if (Result != other.Result) return false;
     if (TypeCase != other.TypeCase) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
@@ -314,12 +469,17 @@ public sealed partial class Data : pb::IMessage<Data>
   public override int GetHashCode() {
     int hash = 1;
     if (HasRoomName) hash ^= RoomName.GetHashCode();
-    if (typeCase_ == TypeOneofCase.Point) hash ^= Point.GetHashCode();
+    if (HasPosition) hash ^= Position.GetHashCode();
     if (HasDisplayName) hash ^= DisplayName.GetHashCode();
     if (HasMessage) hash ^= Message.GetHashCode();
     if (HasNewUserID) hash ^= NewUserID.GetHashCode();
     if (HasEvent) hash ^= Event.GetHashCode();
+    if (typeCase_ == TypeOneofCase.Otoshidama) hash ^= Otoshidama.GetHashCode();
+    if (typeCase_ == TypeOneofCase.Roulette) hash ^= Roulette.GetHashCode();
+    if (typeCase_ == TypeOneofCase.Spaces) hash ^= Spaces.GetHashCode();
+    if (HasOtoshidamaTotal) hash ^= OtoshidamaTotal.GetHashCode();
     if (UserID.Length != 0) hash ^= UserID.GetHashCode();
+    if (HasResult) hash ^= Result.GetHashCode();
     hash ^= (int) typeCase_;
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -343,9 +503,9 @@ public sealed partial class Data : pb::IMessage<Data>
       output.WriteRawTag(10);
       output.WriteString(RoomName);
     }
-    if (typeCase_ == TypeOneofCase.Point) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Point);
+    if (HasPosition) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Position);
     }
     if (HasDisplayName) {
       output.WriteRawTag(26);
@@ -364,8 +524,28 @@ public sealed partial class Data : pb::IMessage<Data>
       output.WriteString(UserID);
     }
     if (HasEvent) {
-      output.WriteRawTag(58);
-      output.WriteString(Event);
+      output.WriteRawTag(56);
+      output.WriteEnum((int) Event);
+    }
+    if (typeCase_ == TypeOneofCase.Otoshidama) {
+      output.WriteRawTag(66);
+      output.WriteMessage(Otoshidama);
+    }
+    if (typeCase_ == TypeOneofCase.Spaces) {
+      output.WriteRawTag(74);
+      output.WriteMessage(Spaces);
+    }
+    if (HasResult) {
+      output.WriteRawTag(82);
+      output.WriteString(Result);
+    }
+    if (typeCase_ == TypeOneofCase.Roulette) {
+      output.WriteRawTag(90);
+      output.WriteMessage(Roulette);
+    }
+    if (HasOtoshidamaTotal) {
+      output.WriteRawTag(96);
+      output.WriteInt32(OtoshidamaTotal);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -381,9 +561,9 @@ public sealed partial class Data : pb::IMessage<Data>
       output.WriteRawTag(10);
       output.WriteString(RoomName);
     }
-    if (typeCase_ == TypeOneofCase.Point) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Point);
+    if (HasPosition) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Position);
     }
     if (HasDisplayName) {
       output.WriteRawTag(26);
@@ -402,8 +582,28 @@ public sealed partial class Data : pb::IMessage<Data>
       output.WriteString(UserID);
     }
     if (HasEvent) {
-      output.WriteRawTag(58);
-      output.WriteString(Event);
+      output.WriteRawTag(56);
+      output.WriteEnum((int) Event);
+    }
+    if (typeCase_ == TypeOneofCase.Otoshidama) {
+      output.WriteRawTag(66);
+      output.WriteMessage(Otoshidama);
+    }
+    if (typeCase_ == TypeOneofCase.Spaces) {
+      output.WriteRawTag(74);
+      output.WriteMessage(Spaces);
+    }
+    if (HasResult) {
+      output.WriteRawTag(82);
+      output.WriteString(Result);
+    }
+    if (typeCase_ == TypeOneofCase.Roulette) {
+      output.WriteRawTag(90);
+      output.WriteMessage(Roulette);
+    }
+    if (HasOtoshidamaTotal) {
+      output.WriteRawTag(96);
+      output.WriteInt32(OtoshidamaTotal);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -418,8 +618,8 @@ public sealed partial class Data : pb::IMessage<Data>
     if (HasRoomName) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(RoomName);
     }
-    if (typeCase_ == TypeOneofCase.Point) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Point);
+    if (HasPosition) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Position);
     }
     if (HasDisplayName) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(DisplayName);
@@ -431,10 +631,25 @@ public sealed partial class Data : pb::IMessage<Data>
       size += 1 + pb::CodedOutputStream.ComputeStringSize(NewUserID);
     }
     if (HasEvent) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Event);
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Event);
+    }
+    if (typeCase_ == TypeOneofCase.Otoshidama) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Otoshidama);
+    }
+    if (typeCase_ == TypeOneofCase.Roulette) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Roulette);
+    }
+    if (typeCase_ == TypeOneofCase.Spaces) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Spaces);
+    }
+    if (HasOtoshidamaTotal) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(OtoshidamaTotal);
     }
     if (UserID.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(UserID);
+    }
+    if (HasResult) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Result);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -451,15 +666,15 @@ public sealed partial class Data : pb::IMessage<Data>
     if (other.UserID.Length != 0) {
       UserID = other.UserID;
     }
+    if (other.HasResult) {
+      Result = other.Result;
+    }
     switch (other.TypeCase) {
       case TypeOneofCase.RoomName:
         RoomName = other.RoomName;
         break;
-      case TypeOneofCase.Point:
-        if (Point == null) {
-          Point = new global::Point();
-        }
-        Point.MergeFrom(other.Point);
+      case TypeOneofCase.Position:
+        Position = other.Position;
         break;
       case TypeOneofCase.DisplayName:
         DisplayName = other.DisplayName;
@@ -472,6 +687,27 @@ public sealed partial class Data : pb::IMessage<Data>
         break;
       case TypeOneofCase.Event:
         Event = other.Event;
+        break;
+      case TypeOneofCase.Otoshidama:
+        if (Otoshidama == null) {
+          Otoshidama = new global::Otoshidama();
+        }
+        Otoshidama.MergeFrom(other.Otoshidama);
+        break;
+      case TypeOneofCase.Roulette:
+        if (Roulette == null) {
+          Roulette = new global::Roulette();
+        }
+        Roulette.MergeFrom(other.Roulette);
+        break;
+      case TypeOneofCase.Spaces:
+        if (Spaces == null) {
+          Spaces = new global::Spaces();
+        }
+        Spaces.MergeFrom(other.Spaces);
+        break;
+      case TypeOneofCase.OtoshidamaTotal:
+        OtoshidamaTotal = other.OtoshidamaTotal;
         break;
     }
 
@@ -498,13 +734,8 @@ public sealed partial class Data : pb::IMessage<Data>
           RoomName = input.ReadString();
           break;
         }
-        case 18: {
-          global::Point subBuilder = new global::Point();
-          if (typeCase_ == TypeOneofCase.Point) {
-            subBuilder.MergeFrom(Point);
-          }
-          input.ReadMessage(subBuilder);
-          Point = subBuilder;
+        case 16: {
+          Position = input.ReadInt32();
           break;
         }
         case 26: {
@@ -523,8 +754,44 @@ public sealed partial class Data : pb::IMessage<Data>
           UserID = input.ReadString();
           break;
         }
-        case 58: {
-          Event = input.ReadString();
+        case 56: {
+          type_ = input.ReadEnum();
+          typeCase_ = TypeOneofCase.Event;
+          break;
+        }
+        case 66: {
+          global::Otoshidama subBuilder = new global::Otoshidama();
+          if (typeCase_ == TypeOneofCase.Otoshidama) {
+            subBuilder.MergeFrom(Otoshidama);
+          }
+          input.ReadMessage(subBuilder);
+          Otoshidama = subBuilder;
+          break;
+        }
+        case 74: {
+          global::Spaces subBuilder = new global::Spaces();
+          if (typeCase_ == TypeOneofCase.Spaces) {
+            subBuilder.MergeFrom(Spaces);
+          }
+          input.ReadMessage(subBuilder);
+          Spaces = subBuilder;
+          break;
+        }
+        case 82: {
+          Result = input.ReadString();
+          break;
+        }
+        case 90: {
+          global::Roulette subBuilder = new global::Roulette();
+          if (typeCase_ == TypeOneofCase.Roulette) {
+            subBuilder.MergeFrom(Roulette);
+          }
+          input.ReadMessage(subBuilder);
+          Roulette = subBuilder;
+          break;
+        }
+        case 96: {
+          OtoshidamaTotal = input.ReadInt32();
           break;
         }
       }
@@ -550,13 +817,8 @@ public sealed partial class Data : pb::IMessage<Data>
           RoomName = input.ReadString();
           break;
         }
-        case 18: {
-          global::Point subBuilder = new global::Point();
-          if (typeCase_ == TypeOneofCase.Point) {
-            subBuilder.MergeFrom(Point);
-          }
-          input.ReadMessage(subBuilder);
-          Point = subBuilder;
+        case 16: {
+          Position = input.ReadInt32();
           break;
         }
         case 26: {
@@ -575,8 +837,44 @@ public sealed partial class Data : pb::IMessage<Data>
           UserID = input.ReadString();
           break;
         }
-        case 58: {
-          Event = input.ReadString();
+        case 56: {
+          type_ = input.ReadEnum();
+          typeCase_ = TypeOneofCase.Event;
+          break;
+        }
+        case 66: {
+          global::Otoshidama subBuilder = new global::Otoshidama();
+          if (typeCase_ == TypeOneofCase.Otoshidama) {
+            subBuilder.MergeFrom(Otoshidama);
+          }
+          input.ReadMessage(subBuilder);
+          Otoshidama = subBuilder;
+          break;
+        }
+        case 74: {
+          global::Spaces subBuilder = new global::Spaces();
+          if (typeCase_ == TypeOneofCase.Spaces) {
+            subBuilder.MergeFrom(Spaces);
+          }
+          input.ReadMessage(subBuilder);
+          Spaces = subBuilder;
+          break;
+        }
+        case 82: {
+          Result = input.ReadString();
+          break;
+        }
+        case 90: {
+          global::Roulette subBuilder = new global::Roulette();
+          if (typeCase_ == TypeOneofCase.Roulette) {
+            subBuilder.MergeFrom(Roulette);
+          }
+          input.ReadMessage(subBuilder);
+          Roulette = subBuilder;
+          break;
+        }
+        case 96: {
+          OtoshidamaTotal = input.ReadInt32();
           break;
         }
       }
@@ -587,16 +885,16 @@ public sealed partial class Data : pb::IMessage<Data>
 }
 
 [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-public sealed partial class Point : pb::IMessage<Point>
+public sealed partial class Spaces : pb::IMessage<Spaces>
 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     , pb::IBufferMessage
 #endif
 {
-  private static readonly pb::MessageParser<Point> _parser = new pb::MessageParser<Point>(() => new Point());
+  private static readonly pb::MessageParser<Spaces> _parser = new pb::MessageParser<Spaces>(() => new Spaces());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<Point> Parser { get { return _parser; } }
+  public static pb::MessageParser<Spaces> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -612,7 +910,7 @@ public sealed partial class Point : pb::IMessage<Point>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public Point() {
+  public Spaces() {
     OnConstruction();
   }
 
@@ -620,59 +918,44 @@ public sealed partial class Point : pb::IMessage<Point>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public Point(Point other) : this() {
-    x_ = other.x_;
-    y_ = other.y_;
+  public Spaces(Spaces other) : this() {
+    spaces_ = other.spaces_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public Point Clone() {
-    return new Point(this);
+  public Spaces Clone() {
+    return new Spaces(this);
   }
 
-  /// <summary>Field number for the "x" field.</summary>
-  public const int XFieldNumber = 1;
-  private float x_;
+  /// <summary>Field number for the "spaces" field.</summary>
+  public const int Spaces_FieldNumber = 1;
+  private static readonly pb::FieldCodec<global::Space> _repeated_spaces_codec
+      = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::Space) x);
+  private readonly pbc::RepeatedField<global::Space> spaces_ = new pbc::RepeatedField<global::Space>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float X {
-    get { return x_; }
-    set {
-      x_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "y" field.</summary>
-  public const int YFieldNumber = 2;
-  private float y_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float Y {
-    get { return y_; }
-    set {
-      y_ = value;
-    }
+  public pbc::RepeatedField<global::Space> Spaces_ {
+    get { return spaces_; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
-    return Equals(other as Point);
+    return Equals(other as Spaces);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(Point other) {
+  public bool Equals(Spaces other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+    if(!spaces_.Equals(other.spaces_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -680,8 +963,7 @@ public sealed partial class Point : pb::IMessage<Point>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
-    if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+    hash ^= spaces_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -700,14 +982,7 @@ public sealed partial class Point : pb::IMessage<Point>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (X != 0F) {
-      output.WriteRawTag(13);
-      output.WriteFloat(X);
-    }
-    if (Y != 0F) {
-      output.WriteRawTag(21);
-      output.WriteFloat(Y);
-    }
+    spaces_.WriteTo(output, _repeated_spaces_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -718,14 +993,7 @@ public sealed partial class Point : pb::IMessage<Point>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (X != 0F) {
-      output.WriteRawTag(13);
-      output.WriteFloat(X);
-    }
-    if (Y != 0F) {
-      output.WriteRawTag(21);
-      output.WriteFloat(Y);
-    }
+    spaces_.WriteTo(ref output, _repeated_spaces_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
     }
@@ -736,12 +1004,7 @@ public sealed partial class Point : pb::IMessage<Point>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (X != 0F) {
-      size += 1 + 4;
-    }
-    if (Y != 0F) {
-      size += 1 + 4;
-    }
+    size += spaces_.CalculateSize(_repeated_spaces_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -750,16 +1013,11 @@ public sealed partial class Point : pb::IMessage<Point>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(Point other) {
+  public void MergeFrom(Spaces other) {
     if (other == null) {
       return;
     }
-    if (other.X != 0F) {
-      X = other.X;
-    }
-    if (other.Y != 0F) {
-      Y = other.Y;
-    }
+    spaces_.Add(other.spaces_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -779,12 +1037,9 @@ public sealed partial class Point : pb::IMessage<Point>
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
-        case 13: {
-          X = input.ReadFloat();
-          break;
-        }
-        case 21: {
-          Y = input.ReadFloat();
+        case 10:
+        case 8: {
+          spaces_.AddEntriesFrom(input, _repeated_spaces_codec);
           break;
         }
       }
@@ -806,12 +1061,479 @@ public sealed partial class Point : pb::IMessage<Point>
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
-        case 13: {
-          X = input.ReadFloat();
+        case 10:
+        case 8: {
+          spaces_.AddEntriesFrom(ref input, _repeated_spaces_codec);
           break;
         }
-        case 21: {
-          Y = input.ReadFloat();
+      }
+    }
+  }
+  #endif
+
+}
+
+[global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+public sealed partial class Otoshidama : pb::IMessage<Otoshidama>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<Otoshidama> _parser = new pb::MessageParser<Otoshidama>(() => new Otoshidama());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<Otoshidama> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataReflection.Descriptor.MessageTypes[2]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Otoshidama() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Otoshidama(Otoshidama other) : this() {
+    userID_ = other.userID_;
+    amount_ = other.amount_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Otoshidama Clone() {
+    return new Otoshidama(this);
+  }
+
+  /// <summary>Field number for the "userID" field.</summary>
+  public const int UserIDFieldNumber = 1;
+  private string userID_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string UserID {
+    get { return userID_; }
+    set {
+      userID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "amount" field.</summary>
+  public const int AmountFieldNumber = 2;
+  private int amount_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Amount {
+    get { return amount_; }
+    set {
+      amount_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as Otoshidama);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(Otoshidama other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (UserID != other.UserID) return false;
+    if (Amount != other.Amount) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (UserID.Length != 0) hash ^= UserID.GetHashCode();
+    if (Amount != 0) hash ^= Amount.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (UserID.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(UserID);
+    }
+    if (Amount != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Amount);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (UserID.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(UserID);
+    }
+    if (Amount != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Amount);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (UserID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(UserID);
+    }
+    if (Amount != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Amount);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(Otoshidama other) {
+    if (other == null) {
+      return;
+    }
+    if (other.UserID.Length != 0) {
+      UserID = other.UserID;
+    }
+    if (other.Amount != 0) {
+      Amount = other.Amount;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+    if ((tag & 7) == 4) {
+      // Abort on any end group tag.
+      return;
+    }
+    switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          UserID = input.ReadString();
+          break;
+        }
+        case 16: {
+          Amount = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+    if ((tag & 7) == 4) {
+      // Abort on any end group tag.
+      return;
+    }
+    switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          UserID = input.ReadString();
+          break;
+        }
+        case 16: {
+          Amount = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+[global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+public sealed partial class Roulette : pb::IMessage<Roulette>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<Roulette> _parser = new pb::MessageParser<Roulette>(() => new Roulette());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<Roulette> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Roulette() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Roulette(Roulette other) : this() {
+    userID_ = other.userID_;
+    number_ = other.number_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Roulette Clone() {
+    return new Roulette(this);
+  }
+
+  /// <summary>Field number for the "userID" field.</summary>
+  public const int UserIDFieldNumber = 1;
+  private string userID_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string UserID {
+    get { return userID_; }
+    set {
+      userID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "number" field.</summary>
+  public const int NumberFieldNumber = 2;
+  private int number_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Number {
+    get { return number_; }
+    set {
+      number_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as Roulette);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(Roulette other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (UserID != other.UserID) return false;
+    if (Number != other.Number) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (UserID.Length != 0) hash ^= UserID.GetHashCode();
+    if (Number != 0) hash ^= Number.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (UserID.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(UserID);
+    }
+    if (Number != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Number);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (UserID.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(UserID);
+    }
+    if (Number != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Number);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (UserID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(UserID);
+    }
+    if (Number != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(Roulette other) {
+    if (other == null) {
+      return;
+    }
+    if (other.UserID.Length != 0) {
+      UserID = other.UserID;
+    }
+    if (other.Number != 0) {
+      Number = other.Number;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+    if ((tag & 7) == 4) {
+      // Abort on any end group tag.
+      return;
+    }
+    switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          UserID = input.ReadString();
+          break;
+        }
+        case 16: {
+          Number = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+    if ((tag & 7) == 4) {
+      // Abort on any end group tag.
+      return;
+    }
+    switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          UserID = input.ReadString();
+          break;
+        }
+        case 16: {
+          Number = input.ReadInt32();
           break;
         }
       }
