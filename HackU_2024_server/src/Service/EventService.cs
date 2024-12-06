@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using Google.Protobuf;
+using Google.Protobuf.Collections;
 using HackU_2024_server.DataBase;
 
 namespace HackU_2024_server.Service;
@@ -42,6 +43,15 @@ public static class EventService
                 break;
             case Data.TypeOneofCase.Spaces:
                 isRelay = false;
+                break;
+            case Data.TypeOneofCase.Roulette:
+                break;
+            case Data.TypeOneofCase.OtoshidamaTotal:
+                isRelay = true;
+                break;
+            case Data.TypeOneofCase.Quiz:
+                isRelay = false;
+                // TODO: judge quiz answer and if correct, add otoshidama
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(data));
@@ -181,9 +191,34 @@ public static class EventService
                     break;
                 case Event.Leave:
                     break;
+                case Event.Quiz:
+                    var quiz = await MakeQuizAsync();
+                    var quizData = new Data
+                    {
+                        Quiz = quiz
+                    };
+                    client.SendAsync(quizData.ToByteArray()).Forget();
+                    foreach (var c in otherClients)
+                    {
+                        c.SendAsync(quizData.ToByteArray()).Forget();
+                    }
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(eventType), eventType, "Invalid Event Type");
             }
+        });
+    }
+    private static async UniTask<Quiz> MakeQuizAsync()
+    {
+        return await UniTask.Run(() =>
+        {
+            var quiz = new Quiz
+            {
+                Question = "問題",
+                Choices = { "選択肢1", "選択肢2", "選択肢3", "選択肢4" },
+                Answer = 1
+            };
+            return quiz;
         });
     }
 }

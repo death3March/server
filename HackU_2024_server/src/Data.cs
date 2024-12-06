@@ -33,11 +33,12 @@ public static partial class DataReflection {
           "CgZzcGFjZXMYASADKA4yBi5TcGFjZSIsCgpPdG9zaGlkYW1hEg4KBnVzZXJJ",
           "RBgBIAEoCRIOCgZhbW91bnQYAiABKAUiKgoIUm91bGV0dGUSDgoGdXNlcklE",
           "GAEgASgJEg4KBm51bWJlchgCIAEoBSI5CgRRdWl6EhAKCHF1ZXN0aW9uGAEg",
-          "ASgJEg8KB2Nob2ljZXMYAiADKAkSDgoGYW5zd2VyGAMgASgFKkkKBUV2ZW50",
+          "ASgJEg8KB2Nob2ljZXMYAiADKAkSDgoGYW5zd2VyGAMgASgFKlMKBUV2ZW50",
           "EgwKCFJPVUxFVFRFEAASDgoKT1RPU0hJREFNQRABEg0KCUZVUklEQVNISRAC",
-          "EggKBEpPSU4QAxIJCgVMRUFWRRAEKmcKBVNwYWNlEg8KC1NUQVJUX1NQQUNF",
-          "EAASDgoKR09BTF9TUEFDRRABEhQKEE9UT1NISURBTUFfU1BBQ0UQAhISCg5S",
-          "T1VMRVRURV9TUEFDRRADEhMKD0ZVUklEQVNISV9TUEFDRRAEYgZwcm90bzM="));
+          "EggKBEpPSU4QAxIJCgVMRUFWRRAEEggKBFFVSVoQBSp3CgVTcGFjZRIPCgtT",
+          "VEFSVF9TUEFDRRAAEg4KCkdPQUxfU1BBQ0UQARIUChBPVE9TSElEQU1BX1NQ",
+          "QUNFEAISEgoOUk9VTEVUVEVfU1BBQ0UQAxITCg9GVVJJREFTSElfU1BBQ0UQ",
+          "BBIOCgpRVUlaX1NQQUNFEAViBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Event), typeof(global::Space), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -58,6 +59,7 @@ public enum Event {
   [pbr::OriginalName("FURIDASHI")] Furidashi = 2,
   [pbr::OriginalName("JOIN")] Join = 3,
   [pbr::OriginalName("LEAVE")] Leave = 4,
+  [pbr::OriginalName("QUIZ")] Quiz = 5,
 }
 
 public enum Space {
@@ -66,6 +68,7 @@ public enum Space {
   [pbr::OriginalName("OTOSHIDAMA_SPACE")] OtoshidamaSpace = 2,
   [pbr::OriginalName("ROULETTE_SPACE")] RouletteSpace = 3,
   [pbr::OriginalName("FURIDASHI_SPACE")] FuridashiSpace = 4,
+  [pbr::OriginalName("QUIZ_SPACE")] QuizSpace = 5,
 }
 
 #endregion

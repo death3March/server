@@ -28,7 +28,7 @@ enum Event {
   FURIDASHI = 2;
   JOIN = 3;
   LEAVE = 4;
-}
+  QUIZ = 5;}
 
 enum Space{
   START_SPACE = 0;
@@ -36,6 +36,7 @@ enum Space{
   OTOSHIDAMA_SPACE = 2;
   ROULETTE_SPACE = 3;
   FURIDASHI_SPACE = 4;
+  QUIZ_SPACE = 5;
 }
 
 message Otoshidama{
