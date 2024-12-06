@@ -12,6 +12,7 @@ message Data {
     Roulette roulette = 11;
     Spaces spaces = 9;
     int32 otoshidamaTotal = 12;
+    Quiz quiz = 13;
   }
   string userID = 6;
   optional string result = 10;
@@ -45,4 +46,10 @@ message Otoshidama{
 message Roulette {
   string userID = 1;
   int32 number = 2;
+}
+
+message Quiz {
+  string question = 1;
+  repeated string choices = 2;
+  int32 answer = 3;
 }

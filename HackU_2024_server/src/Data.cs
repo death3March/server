@@ -22,28 +22,30 @@ public static partial class DataReflection {
   static DataReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgpkYXRhLnByb3RvIrYCCgREYXRhEhIKCHJvb21OYW1lGAEgASgJSAASEgoI",
+          "CgpkYXRhLnByb3RvIs0CCgREYXRhEhIKCHJvb21OYW1lGAEgASgJSAASEgoI",
           "cG9zaXRpb24YAiABKAVIABIVCgtEaXNwbGF5TmFtZRgDIAEoCUgAEhEKB21l",
           "c3NhZ2UYBCABKAlIABITCgluZXdVc2VySUQYBSABKAlIABIXCgVldmVudBgH",
           "IAEoDjIGLkV2ZW50SAASIQoKb3Rvc2hpZGFtYRgIIAEoCzILLk90b3NoaWRh",
           "bWFIABIdCghyb3VsZXR0ZRgLIAEoCzIJLlJvdWxldHRlSAASGQoGc3BhY2Vz",
           "GAkgASgLMgcuU3BhY2VzSAASGQoPb3Rvc2hpZGFtYVRvdGFsGAwgASgFSAAS",
-          "DgoGdXNlcklEGAYgASgJEhMKBnJlc3VsdBgKIAEoCUgBiAEBQgYKBHR5cGVC",
-          "CQoHX3Jlc3VsdCIgCgZTcGFjZXMSFgoGc3BhY2VzGAEgAygOMgYuU3BhY2Ui",
-          "LAoKT3Rvc2hpZGFtYRIOCgZ1c2VySUQYASABKAkSDgoGYW1vdW50GAIgASgF",
-          "IioKCFJvdWxldHRlEg4KBnVzZXJJRBgBIAEoCRIOCgZudW1iZXIYAiABKAUq",
-          "SQoFRXZlbnQSDAoIUk9VTEVUVEUQABIOCgpPVE9TSElEQU1BEAESDQoJRlVS",
-          "SURBU0hJEAISCAoESk9JThADEgkKBUxFQVZFEAQqZwoFU3BhY2USDwoLU1RB",
-          "UlRfU1BBQ0UQABIOCgpHT0FMX1NQQUNFEAESFAoQT1RPU0hJREFNQV9TUEFD",
-          "RRACEhIKDlJPVUxFVFRFX1NQQUNFEAMSEwoPRlVSSURBU0hJX1NQQUNFEARi",
-          "BnByb3RvMw=="));
+          "FQoEcXVpehgNIAEoCzIFLlF1aXpIABIOCgZ1c2VySUQYBiABKAkSEwoGcmVz",
+          "dWx0GAogASgJSAGIAQFCBgoEdHlwZUIJCgdfcmVzdWx0IiAKBlNwYWNlcxIW",
+          "CgZzcGFjZXMYASADKA4yBi5TcGFjZSIsCgpPdG9zaGlkYW1hEg4KBnVzZXJJ",
+          "RBgBIAEoCRIOCgZhbW91bnQYAiABKAUiKgoIUm91bGV0dGUSDgoGdXNlcklE",
+          "GAEgASgJEg4KBm51bWJlchgCIAEoBSI5CgRRdWl6EhAKCHF1ZXN0aW9uGAEg",
+          "ASgJEg8KB2Nob2ljZXMYAiADKAkSDgoGYW5zd2VyGAMgASgFKkkKBUV2ZW50",
+          "EgwKCFJPVUxFVFRFEAASDgoKT1RPU0hJREFNQRABEg0KCUZVUklEQVNISRAC",
+          "EggKBEpPSU4QAxIJCgVMRUFWRRAEKmcKBVNwYWNlEg8KC1NUQVJUX1NQQUNF",
+          "EAASDgoKR09BTF9TUEFDRRABEhQKEE9UT1NISURBTUFfU1BBQ0UQAhISCg5S",
+          "T1VMRVRURV9TUEFDRRADEhMKD0ZVUklEQVNISV9TUEFDRRAEYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Event), typeof(global::Space), }, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Data), global::Data.Parser, new[]{ "RoomName", "Position", "DisplayName", "Message", "NewUserID", "Event", "Otoshidama", "Roulette", "Spaces", "OtoshidamaTotal", "UserID", "Result" }, new[]{ "Type", "Result" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Data), global::Data.Parser, new[]{ "RoomName", "Position", "DisplayName", "Message", "NewUserID", "Event", "Otoshidama", "Roulette", "Spaces", "OtoshidamaTotal", "Quiz", "UserID", "Result" }, new[]{ "Type", "Result" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Spaces), global::Spaces.Parser, new[]{ "Spaces_" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Otoshidama), global::Otoshidama.Parser, new[]{ "UserID", "Amount" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::Roulette), global::Roulette.Parser, new[]{ "UserID", "Number" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::Roulette), global::Roulette.Parser, new[]{ "UserID", "Number" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Quiz), global::Quiz.Parser, new[]{ "Question", "Choices", "Answer" }, null, null, null, null)
         }));
   }
   #endregion
@@ -136,6 +138,9 @@ public sealed partial class Data : pb::IMessage<Data>
         break;
       case TypeOneofCase.OtoshidamaTotal:
         OtoshidamaTotal = other.OtoshidamaTotal;
+        break;
+      case TypeOneofCase.Quiz:
+        Quiz = other.Quiz.Clone();
         break;
     }
 
@@ -366,6 +371,18 @@ public sealed partial class Data : pb::IMessage<Data>
     }
   }
 
+  /// <summary>Field number for the "quiz" field.</summary>
+  public const int QuizFieldNumber = 13;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public global::Quiz Quiz {
+    get { return typeCase_ == TypeOneofCase.Quiz ? (global::Quiz) type_ : null; }
+    set {
+      type_ = value;
+      typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Quiz;
+    }
+  }
+
   /// <summary>Field number for the "userID" field.</summary>
   public const int UserIDFieldNumber = 6;
   private string userID_ = "";
@@ -418,6 +435,7 @@ public sealed partial class Data : pb::IMessage<Data>
     Roulette = 11,
     Spaces = 9,
     OtoshidamaTotal = 12,
+    Quiz = 13,
   }
   private TypeOneofCase typeCase_ = TypeOneofCase.None;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -458,6 +476,7 @@ public sealed partial class Data : pb::IMessage<Data>
     if (!object.Equals(Roulette, other.Roulette)) return false;
     if (!object.Equals(Spaces, other.Spaces)) return false;
     if (OtoshidamaTotal != other.OtoshidamaTotal) return false;
+    if (!object.Equals(Quiz, other.Quiz)) return false;
     if (UserID != other.UserID) return false;
     if (Result != other.Result) return false;
     if (TypeCase != other.TypeCase) return false;
@@ -478,6 +497,7 @@ public sealed partial class Data : pb::IMessage<Data>
     if (typeCase_ == TypeOneofCase.Roulette) hash ^= Roulette.GetHashCode();
     if (typeCase_ == TypeOneofCase.Spaces) hash ^= Spaces.GetHashCode();
     if (HasOtoshidamaTotal) hash ^= OtoshidamaTotal.GetHashCode();
+    if (typeCase_ == TypeOneofCase.Quiz) hash ^= Quiz.GetHashCode();
     if (UserID.Length != 0) hash ^= UserID.GetHashCode();
     if (HasResult) hash ^= Result.GetHashCode();
     hash ^= (int) typeCase_;
@@ -547,6 +567,10 @@ public sealed partial class Data : pb::IMessage<Data>
       output.WriteRawTag(96);
       output.WriteInt32(OtoshidamaTotal);
     }
+    if (typeCase_ == TypeOneofCase.Quiz) {
+      output.WriteRawTag(106);
+      output.WriteMessage(Quiz);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -605,6 +629,10 @@ public sealed partial class Data : pb::IMessage<Data>
       output.WriteRawTag(96);
       output.WriteInt32(OtoshidamaTotal);
     }
+    if (typeCase_ == TypeOneofCase.Quiz) {
+      output.WriteRawTag(106);
+      output.WriteMessage(Quiz);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
     }
@@ -644,6 +672,9 @@ public sealed partial class Data : pb::IMessage<Data>
     }
     if (HasOtoshidamaTotal) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(OtoshidamaTotal);
+    }
+    if (typeCase_ == TypeOneofCase.Quiz) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Quiz);
     }
     if (UserID.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(UserID);
@@ -708,6 +739,12 @@ public sealed partial class Data : pb::IMessage<Data>
         break;
       case TypeOneofCase.OtoshidamaTotal:
         OtoshidamaTotal = other.OtoshidamaTotal;
+        break;
+      case TypeOneofCase.Quiz:
+        if (Quiz == null) {
+          Quiz = new global::Quiz();
+        }
+        Quiz.MergeFrom(other.Quiz);
         break;
     }
 
@@ -794,6 +831,15 @@ public sealed partial class Data : pb::IMessage<Data>
           OtoshidamaTotal = input.ReadInt32();
           break;
         }
+        case 106: {
+          global::Quiz subBuilder = new global::Quiz();
+          if (typeCase_ == TypeOneofCase.Quiz) {
+            subBuilder.MergeFrom(Quiz);
+          }
+          input.ReadMessage(subBuilder);
+          Quiz = subBuilder;
+          break;
+        }
       }
     }
   #endif
@@ -875,6 +921,15 @@ public sealed partial class Data : pb::IMessage<Data>
         }
         case 96: {
           OtoshidamaTotal = input.ReadInt32();
+          break;
+        }
+        case 106: {
+          global::Quiz subBuilder = new global::Quiz();
+          if (typeCase_ == TypeOneofCase.Quiz) {
+            subBuilder.MergeFrom(Quiz);
+          }
+          input.ReadMessage(subBuilder);
+          Quiz = subBuilder;
           break;
         }
       }
@@ -1534,6 +1589,267 @@ public sealed partial class Roulette : pb::IMessage<Roulette>
         }
         case 16: {
           Number = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+[global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+public sealed partial class Quiz : pb::IMessage<Quiz>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<Quiz> _parser = new pb::MessageParser<Quiz>(() => new Quiz());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<Quiz> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataReflection.Descriptor.MessageTypes[4]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Quiz() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Quiz(Quiz other) : this() {
+    question_ = other.question_;
+    choices_ = other.choices_.Clone();
+    answer_ = other.answer_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public Quiz Clone() {
+    return new Quiz(this);
+  }
+
+  /// <summary>Field number for the "question" field.</summary>
+  public const int QuestionFieldNumber = 1;
+  private string question_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Question {
+    get { return question_; }
+    set {
+      question_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "choices" field.</summary>
+  public const int ChoicesFieldNumber = 2;
+  private static readonly pb::FieldCodec<string> _repeated_choices_codec
+      = pb::FieldCodec.ForString(18);
+  private readonly pbc::RepeatedField<string> choices_ = new pbc::RepeatedField<string>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public pbc::RepeatedField<string> Choices {
+    get { return choices_; }
+  }
+
+  /// <summary>Field number for the "answer" field.</summary>
+  public const int AnswerFieldNumber = 3;
+  private int answer_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Answer {
+    get { return answer_; }
+    set {
+      answer_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as Quiz);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(Quiz other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Question != other.Question) return false;
+    if(!choices_.Equals(other.choices_)) return false;
+    if (Answer != other.Answer) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Question.Length != 0) hash ^= Question.GetHashCode();
+    hash ^= choices_.GetHashCode();
+    if (Answer != 0) hash ^= Answer.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (Question.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(Question);
+    }
+    choices_.WriteTo(output, _repeated_choices_codec);
+    if (Answer != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(Answer);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (Question.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(Question);
+    }
+    choices_.WriteTo(ref output, _repeated_choices_codec);
+    if (Answer != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(Answer);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (Question.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Question);
+    }
+    size += choices_.CalculateSize(_repeated_choices_codec);
+    if (Answer != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Answer);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(Quiz other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Question.Length != 0) {
+      Question = other.Question;
+    }
+    choices_.Add(other.choices_);
+    if (other.Answer != 0) {
+      Answer = other.Answer;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+    if ((tag & 7) == 4) {
+      // Abort on any end group tag.
+      return;
+    }
+    switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          Question = input.ReadString();
+          break;
+        }
+        case 18: {
+          choices_.AddEntriesFrom(input, _repeated_choices_codec);
+          break;
+        }
+        case 24: {
+          Answer = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+    if ((tag & 7) == 4) {
+      // Abort on any end group tag.
+      return;
+    }
+    switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          Question = input.ReadString();
+          break;
+        }
+        case 18: {
+          choices_.AddEntriesFrom(ref input, _repeated_choices_codec);
+          break;
+        }
+        case 24: {
+          Answer = input.ReadInt32();
           break;
         }
       }
