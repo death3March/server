@@ -14,7 +14,7 @@ public partial class Client : IDisposable
 {
     [PrimaryKey] public string GlobalUserId => UserID + RoomName;
 
-    [SecondaryKey(0)] public string UserID { get; set; } = string.Empty;
+    [SecondaryKey(0)] public int UserID { get; set; }
 
     [SecondaryKey(1) , NonUnique]
     public string RoomName { get; set; } = string.Empty;
@@ -54,10 +54,12 @@ public partial class Client : IDisposable
         if (TcpClient == null)
             return;
         Socket = WebSocket.CreateFromStream(TcpClient.GetStream(), true, null, TimeSpan.FromMinutes(2));
-        while (Socket is { State: WebSocketState.Connecting })
+        Console.WriteLine("WebSocket Connected");
+        while (Socket.State == WebSocketState.Open)
         {
+            Console.WriteLine("Waiting for receiving");
             // receive data
-            var buffer = new byte[1024];
+            var buffer = new byte[8192];
             var result = await Socket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
             if (result.MessageType == WebSocketMessageType.Close)
             {
@@ -66,8 +68,12 @@ public partial class Client : IDisposable
                 break;
             }
             
+            var size = result.Count;
+            var byteArray = new byte[size];
+            Array.Copy(buffer, byteArray, size);
+            Console.WriteLine("handle received data");
             // handle received data
-            await receiveHandler(this, buffer);
+            await receiveHandler(this, byteArray);
         }
 
         await closeHandler(this);

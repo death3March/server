@@ -20,7 +20,7 @@ namespace HackU_2024_server.Tables
         readonly Func<Client, string> primaryIndexSelector;
 
         readonly Client[] secondaryIndex0;
-        readonly Func<Client, string> secondaryIndex0Selector;
+        readonly Func<Client, int> secondaryIndex0Selector;
         readonly Client[] secondaryIndex1;
         readonly Func<Client, string> secondaryIndex1Selector;
 
@@ -29,7 +29,7 @@ namespace HackU_2024_server.Tables
         {
             this.primaryIndexSelector = x => x.GlobalUserId;
             this.secondaryIndex0Selector = x => x.UserID;
-            this.secondaryIndex0 = CloneAndSortBy(this.secondaryIndex0Selector, System.StringComparer.Ordinal);
+            this.secondaryIndex0 = CloneAndSortBy(this.secondaryIndex0Selector, System.Collections.Generic.Comparer<int>.Default);
             this.secondaryIndex1Selector = x => x.RoomName;
             this.secondaryIndex1 = CloneAndSortBy(this.secondaryIndex1Selector, System.StringComparer.Ordinal);
             OnAfterConstruct();
@@ -60,24 +60,24 @@ namespace HackU_2024_server.Tables
             return FindUniqueRangeCore(data, primaryIndexSelector, System.StringComparer.Ordinal, min, max, ascendant);
         }
 
-        public Client FindByUserID(string key)
+        public Client FindByUserID(int key)
         {
-            return FindUniqueCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key, false);
+            return FindUniqueCoreInt(secondaryIndex0, secondaryIndex0Selector, System.Collections.Generic.Comparer<int>.Default, key, false);
         }
         
-        public bool TryFindByUserID(string key, out Client result)
+        public bool TryFindByUserID(int key, out Client result)
         {
-            return TryFindUniqueCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key, out result);
+            return TryFindUniqueCoreInt(secondaryIndex0, secondaryIndex0Selector, System.Collections.Generic.Comparer<int>.Default, key, out result);
         }
 
-        public Client FindClosestByUserID(string key, bool selectLower = true)
+        public Client FindClosestByUserID(int key, bool selectLower = true)
         {
-            return FindUniqueClosestCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key, selectLower);
+            return FindUniqueClosestCore(secondaryIndex0, secondaryIndex0Selector, System.Collections.Generic.Comparer<int>.Default, key, selectLower);
         }
 
-        public RangeView<Client> FindRangeByUserID(string min, string max, bool ascendant = true)
+        public RangeView<Client> FindRangeByUserID(int min, int max, bool ascendant = true)
         {
-            return FindUniqueRangeCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, min, max, ascendant);
+            return FindUniqueRangeCore(secondaryIndex0, secondaryIndex0Selector, System.Collections.Generic.Comparer<int>.Default, min, max, ascendant);
         }
 
         public RangeView<Client> FindByRoomName(string key)
@@ -128,7 +128,7 @@ namespace HackU_2024_server.Tables
                     }, true, true, System.StringComparer.Ordinal),
                     new MasterMemory.Meta.MetaIndex(new System.Reflection.PropertyInfo[] {
                         typeof(Client).GetProperty("UserID"),
-                    }, false, true, System.StringComparer.Ordinal),
+                    }, false, true, System.Collections.Generic.Comparer<int>.Default),
                     new MasterMemory.Meta.MetaIndex(new System.Reflection.PropertyInfo[] {
                         typeof(Client).GetProperty("RoomName"),
                     }, false, false, System.StringComparer.Ordinal),
