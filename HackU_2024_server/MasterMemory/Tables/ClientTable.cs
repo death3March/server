@@ -60,19 +60,24 @@ namespace HackU_2024_server.Tables
             return FindUniqueRangeCore(data, primaryIndexSelector, System.StringComparer.Ordinal, min, max, ascendant);
         }
 
-        public RangeView<Client> FindByUserID(string key)
+        public Client FindByUserID(string key)
         {
-            return FindManyCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key);
+            return FindUniqueCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key, false);
+        }
+        
+        public bool TryFindByUserID(string key, out Client result)
+        {
+            return TryFindUniqueCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key, out result);
         }
 
-        public RangeView<Client> FindClosestByUserID(string key, bool selectLower = true)
+        public Client FindClosestByUserID(string key, bool selectLower = true)
         {
-            return FindManyClosestCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key, selectLower);
+            return FindUniqueClosestCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, key, selectLower);
         }
 
         public RangeView<Client> FindRangeByUserID(string min, string max, bool ascendant = true)
         {
-            return FindManyRangeCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, min, max, ascendant);
+            return FindUniqueRangeCore(secondaryIndex0, secondaryIndex0Selector, System.StringComparer.Ordinal, min, max, ascendant);
         }
 
         public RangeView<Client> FindByRoomName(string key)
@@ -96,6 +101,7 @@ namespace HackU_2024_server.Tables
 #if !DISABLE_MASTERMEMORY_VALIDATOR
 
             ValidateUniqueCore(data, primaryIndexSelector, "GlobalUserId", resultSet);       
+            ValidateUniqueCore(secondaryIndex0, secondaryIndex0Selector, "UserID", resultSet);       
 
 #endif
         }
@@ -122,7 +128,7 @@ namespace HackU_2024_server.Tables
                     }, true, true, System.StringComparer.Ordinal),
                     new MasterMemory.Meta.MetaIndex(new System.Reflection.PropertyInfo[] {
                         typeof(Client).GetProperty("UserID"),
-                    }, false, false, System.StringComparer.Ordinal),
+                    }, false, true, System.StringComparer.Ordinal),
                     new MasterMemory.Meta.MetaIndex(new System.Reflection.PropertyInfo[] {
                         typeof(Client).GetProperty("RoomName"),
                     }, false, false, System.StringComparer.Ordinal),

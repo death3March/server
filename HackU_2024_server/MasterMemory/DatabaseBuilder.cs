@@ -26,5 +26,11 @@ namespace HackU_2024_server
             return this;
         }
 
+        public DatabaseBuilder Append(System.Collections.Generic.IEnumerable<Room> dataSource)
+        {
+            AppendCore(dataSource, x => x.RoomName, System.StringComparer.Ordinal);
+            return this;
+        }
+
     }
 }

@@ -50,9 +50,10 @@ namespace HackU_2024_server
 
         static MasterMemoryResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<Type, int>(1)
+            lookup = new global::System.Collections.Generic.Dictionary<Type, int>(2)
             {
                 {typeof(Client[]), 0 },
+                {typeof(Room[]), 1 },
             };
         }
 
@@ -64,6 +65,7 @@ namespace HackU_2024_server
             switch (key)
             {
                 case 0: return new MessagePack.Formatters.ArrayFormatter<Client>();
+                case 1: return new MessagePack.Formatters.ArrayFormatter<Room>();
                 default: return null;
             }
         }

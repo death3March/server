@@ -40,8 +40,8 @@ public static class Server
 
     private static async UniTask ClientHandler(Client client, byte[] data)
     {
-        var recvData = Data.Parser.ParseFrom(data);
-        await EventService.OnEventAsync(client, recvData);
+        var recvData = ClientMessage.Parser.ParseFrom(data);
+        await EventService.OnReceiveAsync(client, recvData);
     }
 
     private static async UniTask ReceiveHandler(TcpClient tcpClient)

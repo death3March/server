@@ -1,0 +1,121 @@
+﻿syntax = "proto3";
+
+message ServerMessage {
+  oneof type {
+    PlayerTurnStart playerTurnStart = 1;
+    SugorokuMoveUpdate sugorokuMoveUpdate = 2;
+    PlayerMovementDisplay playerMovementDisplay = 3;
+    QuizStart quizStart = 4;
+    QuizResult quizResult = 5;
+    OtoshidamaEvent otoshidamaEvent = 6;
+    RankingUpdate rankingUpdate = 7;
+    GameStart gameStart = 8;
+    GameEnd gameEnd = 9;
+  }
+}
+
+message PlayerTurnStart {
+  string type = 1; // "PLAYER_TURN_START"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+  }
+}
+
+message SugorokuMoveUpdate {
+  string type = 1; // "SUGOROKU_MOVE_UPDATE"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    int32 stepsMoved = 2;
+    int32 newPosition = 3;
+  }
+}
+
+message PlayerMovementDisplay {
+  string type = 1; // "PLAYER_MOVEMENT_DISPLAY"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    int32 newPosition = 2;
+  }
+}
+
+message QuizStart {
+  string type = 1; // "QUIZ_START"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    string quizQuestion = 2;
+    repeated string options = 3;
+  }
+}
+
+message QuizResult {
+  string type = 1; // "QUIZ_RESULT"
+  Data data = 2;
+
+  message Data {
+    int32 correctPlayerId = 1;
+    int32 otoshidamaAmount = 2;
+    string message = 3;
+  }
+}
+
+message OtoshidamaEvent {
+  string type = 1; // "OTOSHIDAMA_EVENT"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    string message = 2;
+  }
+}
+
+message GameStart{
+  string type = 1; // "GAME_START"
+  Data data = 2;
+
+  message Data {
+    repeated int32 playerIds = 1;
+    Map map = 2;
+    
+    message Map {
+      repeated squareType squares = 1;
+      
+      enum squareType {
+        NORMAL = 0;
+        QUIZ = 1;
+        OTOSHIDAMA = 2;
+        FURIDASHI = 3;
+      }
+    }
+  }
+}
+
+message GameEnd {
+  string type = 1; // "GAME_END"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+  }
+}
+
+message RankingUpdate {
+  string type = 1; // "RANKING_UPDATE"
+  Data data = 2;
+
+  message Data {
+    repeated Ranking rankings = 1;
+
+    message Ranking {
+      int32 playerId = 1;
+      int32 position = 2;
+    }
+  }
+}

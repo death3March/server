@@ -34,7 +34,8 @@ namespace HackU_2024_server
             var newData = CloneAndSortBy(data, x => x.GlobalUserId, System.StringComparer.Ordinal);
             var table = new ClientTable(newData);
             memory = new MemoryDatabase(
-                table
+                table,
+                memory.RoomTable
             
             );
         }
@@ -45,7 +46,8 @@ namespace HackU_2024_server
             var newData = CloneAndSortBy(data, x => x.GlobalUserId, System.StringComparer.Ordinal);
             var table = new ClientTable(newData);
             memory = new MemoryDatabase(
-                table
+                table,
+                memory.RoomTable
             
             );
         }
@@ -56,6 +58,42 @@ namespace HackU_2024_server
             var newData = CloneAndSortBy(data, x => x.GlobalUserId, System.StringComparer.Ordinal);
             var table = new ClientTable(newData);
             memory = new MemoryDatabase(
+                table,
+                memory.RoomTable
+            
+            );
+        }
+
+        public void ReplaceAll(System.Collections.Generic.IList<Room> data)
+        {
+            var newData = CloneAndSortBy(data, x => x.RoomName, System.StringComparer.Ordinal);
+            var table = new RoomTable(newData);
+            memory = new MemoryDatabase(
+                memory.ClientTable,
+                table
+            
+            );
+        }
+
+        public void RemoveRoom(string[] keys)
+        {
+            var data = RemoveCore(memory.RoomTable.GetRawDataUnsafe(), keys, x => x.RoomName, System.StringComparer.Ordinal);
+            var newData = CloneAndSortBy(data, x => x.RoomName, System.StringComparer.Ordinal);
+            var table = new RoomTable(newData);
+            memory = new MemoryDatabase(
+                memory.ClientTable,
+                table
+            
+            );
+        }
+
+        public void Diff(Room[] addOrReplaceData)
+        {
+            var data = DiffCore(memory.RoomTable.GetRawDataUnsafe(), addOrReplaceData, x => x.RoomName, System.StringComparer.Ordinal);
+            var newData = CloneAndSortBy(data, x => x.RoomName, System.StringComparer.Ordinal);
+            var table = new RoomTable(newData);
+            memory = new MemoryDatabase(
+                memory.ClientTable,
                 table
             
             );

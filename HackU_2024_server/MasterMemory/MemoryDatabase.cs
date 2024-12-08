@@ -18,12 +18,15 @@ namespace HackU_2024_server
    public sealed class MemoryDatabase : MemoryDatabaseBase
    {
         public ClientTable ClientTable { get; private set; }
+        public RoomTable RoomTable { get; private set; }
 
         public MemoryDatabase(
-            ClientTable ClientTable
+            ClientTable ClientTable,
+            RoomTable RoomTable
         )
         {
             this.ClientTable = ClientTable;
+            this.RoomTable = RoomTable;
         }
 
         public MemoryDatabase(byte[] databaseBinary, bool internString = true, MessagePack.IFormatterResolver formatterResolver = null, int maxDegreeOfParallelism = 1)
@@ -46,6 +49,7 @@ namespace HackU_2024_server
         void InitSequential(Dictionary<string, (int offset, int count)> header, System.ReadOnlyMemory<byte> databaseBinary, MessagePack.MessagePackSerializerOptions options, int maxDegreeOfParallelism)
         {
             this.ClientTable = ExtractTableData<Client, ClientTable>(header, databaseBinary, options, xs => new ClientTable(xs));
+            this.RoomTable = ExtractTableData<Room, RoomTable>(header, databaseBinary, options, xs => new RoomTable(xs));
         }
 
         void InitParallel(Dictionary<string, (int offset, int count)> header, System.ReadOnlyMemory<byte> databaseBinary, MessagePack.MessagePackSerializerOptions options, int maxDegreeOfParallelism)
@@ -53,6 +57,7 @@ namespace HackU_2024_server
             var extracts = new Action[]
             {
                 () => this.ClientTable = ExtractTableData<Client, ClientTable>(header, databaseBinary, options, xs => new ClientTable(xs)),
+                () => this.RoomTable = ExtractTableData<Room, RoomTable>(header, databaseBinary, options, xs => new RoomTable(xs)),
             };
             
             System.Threading.Tasks.Parallel.Invoke(new System.Threading.Tasks.ParallelOptions
@@ -70,6 +75,7 @@ namespace HackU_2024_server
         {
             var builder = new DatabaseBuilder();
             builder.Append(this.ClientTable.GetRawDataUnsafe());
+            builder.Append(this.RoomTable.GetRawDataUnsafe());
             return builder;
         }
 
@@ -77,6 +83,7 @@ namespace HackU_2024_server
         {
             var builder = new DatabaseBuilder(resolver);
             builder.Append(this.ClientTable.GetRawDataUnsafe());
+            builder.Append(this.RoomTable.GetRawDataUnsafe());
             return builder;
         }
 
@@ -88,10 +95,13 @@ namespace HackU_2024_server
             var database = new ValidationDatabase(new object[]
             {
                 ClientTable,
+                RoomTable,
             });
 
             ((ITableUniqueValidate)ClientTable).ValidateUnique(result);
             ValidateTable(ClientTable.All, database, "GlobalUserId", ClientTable.PrimaryKeySelector, result);
+            ((ITableUniqueValidate)RoomTable).ValidateUnique(result);
+            ValidateTable(RoomTable.All, database, "RoomName", RoomTable.PrimaryKeySelector, result);
 
             return result;
         }
@@ -106,6 +116,8 @@ namespace HackU_2024_server
             {
                 case "Client":
                     return db.ClientTable;
+                case "Room":
+                    return db.RoomTable;
                 
                 default:
                     return null;
@@ -120,6 +132,7 @@ namespace HackU_2024_server
 
             var dict = new Dictionary<string, MasterMemory.Meta.MetaTable>();
             dict.Add("Client", HackU_2024_server.Tables.ClientTable.CreateMetaTable());
+            dict.Add("Room", HackU_2024_server.Tables.RoomTable.CreateMetaTable());
 
             metaTable = new MasterMemory.Meta.MetaDatabase(dict);
             return metaTable;

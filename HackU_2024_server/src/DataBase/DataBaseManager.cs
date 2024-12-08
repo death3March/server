@@ -34,4 +34,34 @@ public static class DataBaseManager{
         ]);
         _db = builder.Build();
     }
+    
+    public static void AddRoomData(in Room room){
+        var builder = _db.ToImmutableBuilder();
+        builder.Diff([room]);
+        _db = builder.Build();
+    }
+    
+    public static void UpdateRoomData(in Room room){
+        var builder = _db.ToImmutableBuilder();
+        builder.Diff([room]);
+        _db = builder.Build();
+    }
+    
+    public static Room? GetRoom(in string roomName)
+    {
+        try
+        {
+            return _db.RoomTable.FindByRoomName(roomName);
+        } catch {
+            return null;
+        }
+    }
+    
+    public static void RemoveRoomData(in Room room){
+        var builder = _db.ToImmutableBuilder();
+        builder.RemoveRoom([
+            room.RoomName
+        ]);
+        _db = builder.Build();
+    }
 }

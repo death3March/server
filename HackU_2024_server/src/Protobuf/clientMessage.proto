@@ -1,0 +1,81 @@
+﻿syntax = "proto3";
+
+message ClientMessage {
+  oneof type {
+    RoomJoinRequest roomJoinRequest = 1;
+    RoomLeaveRequest roomLeaveRequest = 2;
+    GameStartRequest gameStartRequest = 3;
+    GameEndRequest gameEndRequest = 4;
+    QuizAnswer quizAnswer = 5;
+    TurnEndNotification turnEndNotification = 6;
+    OtherMessage otherMessage = 7;
+  }
+}
+
+message RoomJoinRequest {
+  string type = 1; // "ROOM_JOIN_REQUEST"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    string roomCode = 2;
+  }
+}
+
+message RoomLeaveRequest {
+  string type = 1; // "ROOM_LEAVE_REQUEST"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+  }
+}
+
+message GameStartRequest {
+  string type = 1; // "GAME_START_REQUEST"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    string roomCode = 2;
+  }
+}
+
+message GameEndRequest {
+  string type = 1; // "GAME_END_REQUEST"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    string roomCode = 2;
+  }
+}
+
+message QuizAnswer {
+  string type = 1; // "QUIZ_ANSWER"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    string answer = 2;
+  }
+}
+
+message TurnEndNotification {
+  string type = 1; // "TURN_END_NOTIFICATION"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+  }
+}
+
+message OtherMessage {
+  string type = 1; // "OTHER_MESSAGE"
+  Data data = 2;
+
+  message Data {
+    int32 playerId = 1;
+    string message = 2;
+  }
+}
