@@ -31,27 +31,27 @@ public static partial class ClientMessageReflection {
           "aWZpY2F0aW9uGAYgASgLMhQuVHVybkVuZE5vdGlmaWNhdGlvbkgAEiUKDG90",
           "aGVyTWVzc2FnZRgHIAEoCzINLk90aGVyTWVzc2FnZUgAQgYKBHR5cGUicAoP",
           "Um9vbUpvaW5SZXF1ZXN0EgwKBHR5cGUYASABKAkSIwoEZGF0YRgCIAEoCzIV",
-          "LlJvb21Kb2luUmVxdWVzdC5EYXRhGioKBERhdGESEAoIcGxheWVySWQYASAB",
-          "KAUSEAoIcm9vbUNvZGUYAiABKAkiYAoQUm9vbUxlYXZlUmVxdWVzdBIMCgR0",
+          "LlJvb21Kb2luUmVxdWVzdC5EYXRhGioKBERhdGESEAoIbmlja25hbWUYASAB",
+          "KAkSEAoIcm9vbUNvZGUYAiABKAkiYAoQUm9vbUxlYXZlUmVxdWVzdBIMCgR0",
           "eXBlGAEgASgJEiQKBGRhdGEYAiABKAsyFi5Sb29tTGVhdmVSZXF1ZXN0LkRh",
-          "dGEaGAoERGF0YRIQCghwbGF5ZXJJZBgBIAEoBSJyChBHYW1lU3RhcnRSZXF1",
+          "dGEaGAoERGF0YRIQCghwbGF5ZXJJZBgBIAEoCSJyChBHYW1lU3RhcnRSZXF1",
           "ZXN0EgwKBHR5cGUYASABKAkSJAoEZGF0YRgCIAEoCzIWLkdhbWVTdGFydFJl",
-          "cXVlc3QuRGF0YRoqCgREYXRhEhAKCHBsYXllcklkGAEgASgFEhAKCHJvb21D",
+          "cXVlc3QuRGF0YRoqCgREYXRhEhAKCHBsYXllcklkGAEgASgJEhAKCHJvb21D",
           "b2RlGAIgASgJIm4KDkdhbWVFbmRSZXF1ZXN0EgwKBHR5cGUYASABKAkSIgoE",
           "ZGF0YRgCIAEoCzIULkdhbWVFbmRSZXF1ZXN0LkRhdGEaKgoERGF0YRIQCghw",
-          "bGF5ZXJJZBgBIAEoBRIQCghyb29tQ29kZRgCIAEoCSJkCgpRdWl6QW5zd2Vy",
+          "bGF5ZXJJZBgBIAEoCRIQCghyb29tQ29kZRgCIAEoCSJkCgpRdWl6QW5zd2Vy",
           "EgwKBHR5cGUYASABKAkSHgoEZGF0YRgCIAEoCzIQLlF1aXpBbnN3ZXIuRGF0",
-          "YRooCgREYXRhEhAKCHBsYXllcklkGAEgASgFEg4KBmFuc3dlchgCIAEoCSJm",
+          "YRooCgREYXRhEhAKCHBsYXllcklkGAEgASgJEg4KBmFuc3dlchgCIAEoCSJm",
           "ChNUdXJuRW5kTm90aWZpY2F0aW9uEgwKBHR5cGUYASABKAkSJwoEZGF0YRgC",
           "IAEoCzIZLlR1cm5FbmROb3RpZmljYXRpb24uRGF0YRoYCgREYXRhEhAKCHBs",
-          "YXllcklkGAEgASgFImkKDE90aGVyTWVzc2FnZRIMCgR0eXBlGAEgASgJEiAK",
+          "YXllcklkGAEgASgJImkKDE90aGVyTWVzc2FnZRIMCgR0eXBlGAEgASgJEiAK",
           "BGRhdGEYAiABKAsyEi5PdGhlck1lc3NhZ2UuRGF0YRopCgREYXRhEhAKCHBs",
-          "YXllcklkGAEgASgFEg8KB21lc3NhZ2UYAiABKAliBnByb3RvMw=="));
+          "YXllcklkGAEgASgJEg8KB21lc3NhZ2UYAiABKAliBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::ClientMessage), global::ClientMessage.Parser, new[]{ "RoomJoinRequest", "RoomLeaveRequest", "GameStartRequest", "GameEndRequest", "QuizAnswer", "TurnEndNotification", "OtherMessage" }, new[]{ "Type" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::RoomJoinRequest), global::RoomJoinRequest.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RoomJoinRequest.Types.Data), global::RoomJoinRequest.Types.Data.Parser, new[]{ "PlayerId", "RoomCode" }, null, null, null, null)}),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RoomJoinRequest), global::RoomJoinRequest.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RoomJoinRequest.Types.Data), global::RoomJoinRequest.Types.Data.Parser, new[]{ "Nickname", "RoomCode" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoomLeaveRequest), global::RoomLeaveRequest.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RoomLeaveRequest.Types.Data), global::RoomLeaveRequest.Types.Data.Parser, new[]{ "PlayerId" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::GameStartRequest), global::GameStartRequest.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameStartRequest.Types.Data), global::GameStartRequest.Types.Data.Parser, new[]{ "PlayerId", "RoomCode" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::GameEndRequest), global::GameEndRequest.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameEndRequest.Types.Data), global::GameEndRequest.Types.Data.Parser, new[]{ "PlayerId", "RoomCode" }, null, null, null, null)}),
@@ -908,7 +908,7 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public Data(Data other) : this() {
-        playerId_ = other.playerId_;
+        nickname_ = other.nickname_;
         roomCode_ = other.roomCode_;
         _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       }
@@ -919,15 +919,15 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
         return new Data(this);
       }
 
-      /// <summary>Field number for the "playerId" field.</summary>
-      public const int PlayerIdFieldNumber = 1;
-      private int playerId_;
+      /// <summary>Field number for the "nickname" field.</summary>
+      public const int NicknameFieldNumber = 1;
+      private string nickname_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int PlayerId {
-        get { return playerId_; }
+      public string Nickname {
+        get { return nickname_; }
         set {
-          playerId_ = value;
+          nickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -958,7 +958,7 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
         if (ReferenceEquals(other, this)) {
           return true;
         }
-        if (PlayerId != other.PlayerId) return false;
+        if (Nickname != other.Nickname) return false;
         if (RoomCode != other.RoomCode) return false;
         return Equals(_unknownFields, other._unknownFields);
       }
@@ -967,7 +967,7 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+        if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
         if (RoomCode.Length != 0) hash ^= RoomCode.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
@@ -987,9 +987,9 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (Nickname.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(Nickname);
         }
         if (RoomCode.Length != 0) {
           output.WriteRawTag(18);
@@ -1005,9 +1005,9 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (Nickname.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(Nickname);
         }
         if (RoomCode.Length != 0) {
           output.WriteRawTag(18);
@@ -1023,8 +1023,8 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+        if (Nickname.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
         }
         if (RoomCode.Length != 0) {
           size += 1 + pb::CodedOutputStream.ComputeStringSize(RoomCode);
@@ -1041,8 +1041,8 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
         if (other == null) {
           return;
         }
-        if (other.PlayerId != 0) {
-          PlayerId = other.PlayerId;
+        if (other.Nickname.Length != 0) {
+          Nickname = other.Nickname;
         }
         if (other.RoomCode.Length != 0) {
           RoomCode = other.RoomCode;
@@ -1066,8 +1066,8 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              Nickname = input.ReadString();
               break;
             }
             case 18: {
@@ -1093,8 +1093,8 @@ public sealed partial class RoomJoinRequest : pb::IMessage<RoomJoinRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              Nickname = input.ReadString();
               break;
             }
             case 18: {
@@ -1410,13 +1410,13 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
 
       /// <summary>Field number for the "playerId" field.</summary>
       public const int PlayerIdFieldNumber = 1;
-      private int playerId_;
+      private string playerId_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int PlayerId {
+      public string PlayerId {
         get { return playerId_; }
         set {
-          playerId_ = value;
+          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -1443,7 +1443,7 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -1462,9 +1462,9 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
@@ -1476,9 +1476,9 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
@@ -1490,8 +1490,8 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+        if (PlayerId.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
         }
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
@@ -1505,7 +1505,7 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
         if (other == null) {
           return;
         }
-        if (other.PlayerId != 0) {
+        if (other.PlayerId.Length != 0) {
           PlayerId = other.PlayerId;
         }
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1527,8 +1527,8 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
           }
@@ -1550,8 +1550,8 @@ public sealed partial class RoomLeaveRequest : pb::IMessage<RoomLeaveRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
           }
@@ -1864,13 +1864,13 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
 
       /// <summary>Field number for the "playerId" field.</summary>
       public const int PlayerIdFieldNumber = 1;
-      private int playerId_;
+      private string playerId_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int PlayerId {
+      public string PlayerId {
         get { return playerId_; }
         set {
-          playerId_ = value;
+          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -1910,7 +1910,7 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (RoomCode.Length != 0) hash ^= RoomCode.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
@@ -1930,9 +1930,9 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (RoomCode.Length != 0) {
           output.WriteRawTag(18);
@@ -1948,9 +1948,9 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (RoomCode.Length != 0) {
           output.WriteRawTag(18);
@@ -1966,8 +1966,8 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+        if (PlayerId.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
         }
         if (RoomCode.Length != 0) {
           size += 1 + pb::CodedOutputStream.ComputeStringSize(RoomCode);
@@ -1984,7 +1984,7 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
         if (other == null) {
           return;
         }
-        if (other.PlayerId != 0) {
+        if (other.PlayerId.Length != 0) {
           PlayerId = other.PlayerId;
         }
         if (other.RoomCode.Length != 0) {
@@ -2009,8 +2009,8 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {
@@ -2036,8 +2036,8 @@ public sealed partial class GameStartRequest : pb::IMessage<GameStartRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {
@@ -2354,13 +2354,13 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
 
       /// <summary>Field number for the "playerId" field.</summary>
       public const int PlayerIdFieldNumber = 1;
-      private int playerId_;
+      private string playerId_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int PlayerId {
+      public string PlayerId {
         get { return playerId_; }
         set {
-          playerId_ = value;
+          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -2400,7 +2400,7 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (RoomCode.Length != 0) hash ^= RoomCode.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
@@ -2420,9 +2420,9 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (RoomCode.Length != 0) {
           output.WriteRawTag(18);
@@ -2438,9 +2438,9 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (RoomCode.Length != 0) {
           output.WriteRawTag(18);
@@ -2456,8 +2456,8 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+        if (PlayerId.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
         }
         if (RoomCode.Length != 0) {
           size += 1 + pb::CodedOutputStream.ComputeStringSize(RoomCode);
@@ -2474,7 +2474,7 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
         if (other == null) {
           return;
         }
-        if (other.PlayerId != 0) {
+        if (other.PlayerId.Length != 0) {
           PlayerId = other.PlayerId;
         }
         if (other.RoomCode.Length != 0) {
@@ -2499,8 +2499,8 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {
@@ -2526,8 +2526,8 @@ public sealed partial class GameEndRequest : pb::IMessage<GameEndRequest>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {
@@ -2844,13 +2844,13 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
 
       /// <summary>Field number for the "playerId" field.</summary>
       public const int PlayerIdFieldNumber = 1;
-      private int playerId_;
+      private string playerId_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int PlayerId {
+      public string PlayerId {
         get { return playerId_; }
         set {
-          playerId_ = value;
+          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -2890,7 +2890,7 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (Answer.Length != 0) hash ^= Answer.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
@@ -2910,9 +2910,9 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (Answer.Length != 0) {
           output.WriteRawTag(18);
@@ -2928,9 +2928,9 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (Answer.Length != 0) {
           output.WriteRawTag(18);
@@ -2946,8 +2946,8 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+        if (PlayerId.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
         }
         if (Answer.Length != 0) {
           size += 1 + pb::CodedOutputStream.ComputeStringSize(Answer);
@@ -2964,7 +2964,7 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
         if (other == null) {
           return;
         }
-        if (other.PlayerId != 0) {
+        if (other.PlayerId.Length != 0) {
           PlayerId = other.PlayerId;
         }
         if (other.Answer.Length != 0) {
@@ -2989,8 +2989,8 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {
@@ -3016,8 +3016,8 @@ public sealed partial class QuizAnswer : pb::IMessage<QuizAnswer>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {
@@ -3333,13 +3333,13 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
 
       /// <summary>Field number for the "playerId" field.</summary>
       public const int PlayerIdFieldNumber = 1;
-      private int playerId_;
+      private string playerId_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int PlayerId {
+      public string PlayerId {
         get { return playerId_; }
         set {
-          playerId_ = value;
+          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -3366,7 +3366,7 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -3385,9 +3385,9 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
@@ -3399,9 +3399,9 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
@@ -3413,8 +3413,8 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+        if (PlayerId.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
         }
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
@@ -3428,7 +3428,7 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
         if (other == null) {
           return;
         }
-        if (other.PlayerId != 0) {
+        if (other.PlayerId.Length != 0) {
           PlayerId = other.PlayerId;
         }
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -3450,8 +3450,8 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
           }
@@ -3473,8 +3473,8 @@ public sealed partial class TurnEndNotification : pb::IMessage<TurnEndNotificati
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
           }
@@ -3787,13 +3787,13 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
 
       /// <summary>Field number for the "playerId" field.</summary>
       public const int PlayerIdFieldNumber = 1;
-      private int playerId_;
+      private string playerId_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int PlayerId {
+      public string PlayerId {
         get { return playerId_; }
         set {
-          playerId_ = value;
+          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -3833,7 +3833,7 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (Message.Length != 0) hash ^= Message.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
@@ -3853,9 +3853,9 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (Message.Length != 0) {
           output.WriteRawTag(18);
@@ -3871,9 +3871,9 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(PlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (Message.Length != 0) {
           output.WriteRawTag(18);
@@ -3889,8 +3889,8 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+        if (PlayerId.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
         }
         if (Message.Length != 0) {
           size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
@@ -3907,7 +3907,7 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
         if (other == null) {
           return;
         }
-        if (other.PlayerId != 0) {
+        if (other.PlayerId.Length != 0) {
           PlayerId = other.PlayerId;
         }
         if (other.Message.Length != 0) {
@@ -3932,8 +3932,8 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {
@@ -3959,8 +3959,8 @@ public sealed partial class OtherMessage : pb::IMessage<OtherMessage>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              PlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 18: {

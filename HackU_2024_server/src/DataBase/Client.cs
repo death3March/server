@@ -14,14 +14,14 @@ public partial class Client : IDisposable
 {
     [PrimaryKey] public string GlobalUserId => UserID + RoomName;
 
-    [SecondaryKey(0)] public int UserID { get; set; }
+    [SecondaryKey(0)] public string UserID { get; set; } = string.Empty;
 
     [SecondaryKey(1) , NonUnique]
     public string RoomName { get; set; } = string.Empty;
 
-    public string DisplayName { get; set; } = string.Empty;
+    public string Nickname { get; set; } = string.Empty;
     
-    public WebSocket? Socket { get; set; }
+    public WebSocket? Socket { get; private set; }
     
     private TcpClient? TcpClient { get; set; }
 
@@ -46,6 +46,7 @@ public partial class Client : IDisposable
                                        .Groups[1].Value.Trim() + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"))) + "\r\n\r\n";
             var responseBytes = Encoding.UTF8.GetBytes(response);
             await stream.WriteAsync(responseBytes);
+            UserID = Guid.NewGuid().ToString();
         }
     }
 

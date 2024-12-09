@@ -11,6 +11,7 @@ message ServerMessage {
     RankingUpdate rankingUpdate = 7;
     GameStart gameStart = 8;
     GameEnd gameEnd = 9;
+    RoomJoinResponse roomJoinResponse = 10;
   }
 }
 
@@ -19,7 +20,7 @@ message PlayerTurnStart {
   Data data = 2;
 
   message Data {
-    int32 playerId = 1;
+    string playerId = 1;
   }
 }
 
@@ -28,7 +29,7 @@ message SugorokuMoveUpdate {
   Data data = 2;
 
   message Data {
-    int32 playerId = 1;
+    string playerId = 1;
     int32 stepsMoved = 2;
     int32 newPosition = 3;
   }
@@ -39,7 +40,7 @@ message PlayerMovementDisplay {
   Data data = 2;
 
   message Data {
-    int32 playerId = 1;
+    string playerId = 1;
     int32 newPosition = 2;
   }
 }
@@ -49,7 +50,7 @@ message QuizStart {
   Data data = 2;
 
   message Data {
-    int32 playerId = 1;
+    string playerId = 1;
     string quizQuestion = 2;
     repeated string options = 3;
   }
@@ -71,7 +72,7 @@ message OtoshidamaEvent {
   Data data = 2;
 
   message Data {
-    int32 playerId = 1;
+    string playerId = 1;
     string message = 2;
   }
 }
@@ -81,7 +82,7 @@ message GameStart{
   Data data = 2;
 
   message Data {
-    repeated int32 playerIds = 1;
+    repeated string playerIds = 1;
     Map map = 2;
     
     message Map {
@@ -102,7 +103,7 @@ message GameEnd {
   Data data = 2;
 
   message Data {
-    int32 playerId = 1;
+    string playerId = 1;
   }
 }
 
@@ -114,8 +115,19 @@ message RankingUpdate {
     repeated Ranking rankings = 1;
 
     message Ranking {
-      int32 playerId = 1;
+      string playerId = 1;
       int32 position = 2;
     }
+  }
+}
+
+message RoomJoinResponse {
+  string type = 1; // "ROOM_JOIN_RESPONSE"
+  Data data = 2;
+
+  message Data {
+    string playerId = 1;
+    string nickname = 2;
+    string roomCode = 3;
   }
 }
