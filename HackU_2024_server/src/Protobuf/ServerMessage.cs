@@ -46,23 +46,24 @@ public static partial class ServerMessageReflection {
           "aW9ucxgDIAMoCSKGAQoKUXVpelJlc3VsdBIMCgR0eXBlGAEgASgJEh4KBGRh",
           "dGEYAiABKAsyEC5RdWl6UmVzdWx0LkRhdGEaSgoERGF0YRIXCg9jb3JyZWN0",
           "UGxheWVySWQYASABKAUSGAoQb3Rvc2hpZGFtYUFtb3VudBgCIAEoBRIPCgdt",
-          "ZXNzYWdlGAMgASgJIm8KD090b3NoaWRhbWFFdmVudBIMCgR0eXBlGAEgASgJ",
-          "EiMKBGRhdGEYAiABKAsyFS5PdG9zaGlkYW1hRXZlbnQuRGF0YRopCgREYXRh",
-          "EhAKCHBsYXllcklkGAEgASgJEg8KB21lc3NhZ2UYAiABKAki8QEKCUdhbWVT",
-          "dGFydBIMCgR0eXBlGAEgASgJEh0KBGRhdGEYAiABKAsyDy5HYW1lU3RhcnQu",
-          "RGF0YRq2AQoERGF0YRIRCglwbGF5ZXJJZHMYASADKAkSIAoDbWFwGAIgASgL",
-          "MhMuR2FtZVN0YXJ0LkRhdGEuTWFwGnkKA01hcBIvCgdzcXVhcmVzGAEgAygO",
-          "Mh4uR2FtZVN0YXJ0LkRhdGEuTWFwLnNxdWFyZVR5cGUiQQoKc3F1YXJlVHlw",
-          "ZRIKCgZOT1JNQUwQABIICgRRVUlaEAESDgoKT1RPU0hJREFNQRACEg0KCUZV",
-          "UklEQVNISRADIk4KB0dhbWVFbmQSDAoEdHlwZRgBIAEoCRIbCgRkYXRhGAIg",
-          "ASgLMg0uR2FtZUVuZC5EYXRhGhgKBERhdGESEAoIcGxheWVySWQYASABKAki",
-          "pgEKDVJhbmtpbmdVcGRhdGUSDAoEdHlwZRgBIAEoCRIhCgRkYXRhGAIgASgL",
-          "MhMuUmFua2luZ1VwZGF0ZS5EYXRhGmQKBERhdGESLQoIcmFua2luZ3MYASAD",
-          "KAsyGy5SYW5raW5nVXBkYXRlLkRhdGEuUmFua2luZxotCgdSYW5raW5nEhAK",
-          "CHBsYXllcklkGAEgASgJEhAKCHBvc2l0aW9uGAIgASgFIoQBChBSb29tSm9p",
-          "blJlc3BvbnNlEgwKBHR5cGUYASABKAkSJAoEZGF0YRgCIAEoCzIWLlJvb21K",
-          "b2luUmVzcG9uc2UuRGF0YRo8CgREYXRhEhAKCHBsYXllcklkGAEgASgJEhAK",
-          "CG5pY2tuYW1lGAIgASgJEhAKCHJvb21Db2RlGAMgASgJYgZwcm90bzM="));
+          "ZXNzYWdlGAMgASgJIokBCg9PdG9zaGlkYW1hRXZlbnQSDAoEdHlwZRgBIAEo",
+          "CRIjCgRkYXRhGAIgASgLMhUuT3Rvc2hpZGFtYUV2ZW50LkRhdGEaQwoERGF0",
+          "YRIQCghwbGF5ZXJJZBgBIAEoCRIPCgdtZXNzYWdlGAIgASgJEhgKEG90b3No",
+          "aWRhbWFBbW91bnQYAyABKAUi8QEKCUdhbWVTdGFydBIMCgR0eXBlGAEgASgJ",
+          "Eh0KBGRhdGEYAiABKAsyDy5HYW1lU3RhcnQuRGF0YRq2AQoERGF0YRIRCglw",
+          "bGF5ZXJJZHMYASADKAkSIAoDbWFwGAIgASgLMhMuR2FtZVN0YXJ0LkRhdGEu",
+          "TWFwGnkKA01hcBIvCgdzcXVhcmVzGAEgAygOMh4uR2FtZVN0YXJ0LkRhdGEu",
+          "TWFwLnNxdWFyZVR5cGUiQQoKc3F1YXJlVHlwZRIKCgZOT1JNQUwQABIICgRR",
+          "VUlaEAESDgoKT1RPU0hJREFNQRACEg0KCUZVUklEQVNISRADIk4KB0dhbWVF",
+          "bmQSDAoEdHlwZRgBIAEoCRIbCgRkYXRhGAIgASgLMg0uR2FtZUVuZC5EYXRh",
+          "GhgKBERhdGESEAoIcGxheWVySWQYASABKAkipgEKDVJhbmtpbmdVcGRhdGUS",
+          "DAoEdHlwZRgBIAEoCRIhCgRkYXRhGAIgASgLMhMuUmFua2luZ1VwZGF0ZS5E",
+          "YXRhGmQKBERhdGESLQoIcmFua2luZ3MYASADKAsyGy5SYW5raW5nVXBkYXRl",
+          "LkRhdGEuUmFua2luZxotCgdSYW5raW5nEhAKCHBsYXllcklkGAEgASgJEhAK",
+          "CHBvc2l0aW9uGAIgASgFIoQBChBSb29tSm9pblJlc3BvbnNlEgwKBHR5cGUY",
+          "ASABKAkSJAoEZGF0YRgCIAEoCzIWLlJvb21Kb2luUmVzcG9uc2UuRGF0YRo8",
+          "CgREYXRhEhAKCHBsYXllcklkGAEgASgJEhAKCG5pY2tuYW1lGAIgASgJEhAK",
+          "CHJvb21Db2RlGAMgASgJYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -72,7 +73,7 @@ public static partial class ServerMessageReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::PlayerMovementDisplay), global::PlayerMovementDisplay.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::PlayerMovementDisplay.Types.Data), global::PlayerMovementDisplay.Types.Data.Parser, new[]{ "PlayerId", "NewPosition" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::QuizStart), global::QuizStart.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QuizStart.Types.Data), global::QuizStart.Types.Data.Parser, new[]{ "PlayerId", "QuizQuestion", "Options" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::QuizResult), global::QuizResult.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QuizResult.Types.Data), global::QuizResult.Types.Data.Parser, new[]{ "CorrectPlayerId", "OtoshidamaAmount", "Message" }, null, null, null, null)}),
-          new pbr::GeneratedClrTypeInfo(typeof(global::OtoshidamaEvent), global::OtoshidamaEvent.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::OtoshidamaEvent.Types.Data), global::OtoshidamaEvent.Types.Data.Parser, new[]{ "PlayerId", "Message" }, null, null, null, null)}),
+          new pbr::GeneratedClrTypeInfo(typeof(global::OtoshidamaEvent), global::OtoshidamaEvent.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::OtoshidamaEvent.Types.Data), global::OtoshidamaEvent.Types.Data.Parser, new[]{ "PlayerId", "Message", "OtoshidamaAmount" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::GameStart), global::GameStart.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameStart.Types.Data), global::GameStart.Types.Data.Parser, new[]{ "PlayerIds", "Map" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameStart.Types.Data.Types.Map), global::GameStart.Types.Data.Types.Map.Parser, new[]{ "Squares" }, null, new[]{ typeof(global::GameStart.Types.Data.Types.Map.Types.squareType) }, null, null)})}),
           new pbr::GeneratedClrTypeInfo(typeof(global::GameEnd), global::GameEnd.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameEnd.Types.Data), global::GameEnd.Types.Data.Parser, new[]{ "PlayerId" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::RankingUpdate), global::RankingUpdate.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RankingUpdate.Types.Data), global::RankingUpdate.Types.Data.Parser, new[]{ "Rankings" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RankingUpdate.Types.Data.Types.Ranking), global::RankingUpdate.Types.Data.Types.Ranking.Parser, new[]{ "PlayerId", "Position" }, null, null, null, null)})}),
@@ -3601,6 +3602,7 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
       public Data(Data other) : this() {
         playerId_ = other.playerId_;
         message_ = other.message_;
+        otoshidamaAmount_ = other.otoshidamaAmount_;
         _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       }
 
@@ -3634,6 +3636,18 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
         }
       }
 
+      /// <summary>Field number for the "otoshidamaAmount" field.</summary>
+      public const int OtoshidamaAmountFieldNumber = 3;
+      private int otoshidamaAmount_;
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+      public int OtoshidamaAmount {
+        get { return otoshidamaAmount_; }
+        set {
+          otoshidamaAmount_ = value;
+        }
+      }
+
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override bool Equals(object other) {
@@ -3651,6 +3665,7 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
         }
         if (PlayerId != other.PlayerId) return false;
         if (Message != other.Message) return false;
+        if (OtoshidamaAmount != other.OtoshidamaAmount) return false;
         return Equals(_unknownFields, other._unknownFields);
       }
 
@@ -3660,6 +3675,7 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
         int hash = 1;
         if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (Message.Length != 0) hash ^= Message.GetHashCode();
+        if (OtoshidamaAmount != 0) hash ^= OtoshidamaAmount.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -3686,6 +3702,10 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
           output.WriteRawTag(18);
           output.WriteString(Message);
         }
+        if (OtoshidamaAmount != 0) {
+          output.WriteRawTag(24);
+          output.WriteInt32(OtoshidamaAmount);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
         }
@@ -3704,6 +3724,10 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
           output.WriteRawTag(18);
           output.WriteString(Message);
         }
+        if (OtoshidamaAmount != 0) {
+          output.WriteRawTag(24);
+          output.WriteInt32(OtoshidamaAmount);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
         }
@@ -3719,6 +3743,9 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
         }
         if (Message.Length != 0) {
           size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+        }
+        if (OtoshidamaAmount != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeInt32Size(OtoshidamaAmount);
         }
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
@@ -3737,6 +3764,9 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
         }
         if (other.Message.Length != 0) {
           Message = other.Message;
+        }
+        if (other.OtoshidamaAmount != 0) {
+          OtoshidamaAmount = other.OtoshidamaAmount;
         }
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
       }
@@ -3765,6 +3795,10 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
               Message = input.ReadString();
               break;
             }
+            case 24: {
+              OtoshidamaAmount = input.ReadInt32();
+              break;
+            }
           }
         }
       #endif
@@ -3790,6 +3824,10 @@ public sealed partial class OtoshidamaEvent : pb::IMessage<OtoshidamaEvent>
             }
             case 18: {
               Message = input.ReadString();
+              break;
+            }
+            case 24: {
+              OtoshidamaAmount = input.ReadInt32();
               break;
             }
           }

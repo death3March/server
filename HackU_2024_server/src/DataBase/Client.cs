@@ -25,10 +25,6 @@ public partial class Client : IDisposable
     
     private TcpClient? TcpClient { get; set; }
 
-    public int Otoshidama { get; set; } = 0;
-
-    public int Position { get; set; } = 0;
-
     public async UniTask InitializeAsync(TcpClient tcpClient)
     {
         TcpClient = tcpClient;

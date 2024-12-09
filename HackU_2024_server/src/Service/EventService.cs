@@ -31,6 +31,7 @@ public static class EventService
             case ClientMessage.TypeOneofCase.QuizAnswer:
                 break;
             case ClientMessage.TypeOneofCase.TurnEndNotification:
+                res = GameService.NextTurn(client, data.TurnEndNotification);
                 break;
             case ClientMessage.TypeOneofCase.OtherMessage:
                 break;

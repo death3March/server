@@ -74,6 +74,7 @@ message OtoshidamaEvent {
   message Data {
     string playerId = 1;
     string message = 2;
+    int32 otoshidamaAmount = 3;
   }
 }
 
