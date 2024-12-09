@@ -1,6 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
 using HackU_2024_server.DataBase;
 
 namespace HackU_2024_server.Service;
@@ -11,7 +10,7 @@ public static class EventService
     {
         Console.WriteLine(nameof(data.TypeCase));
         var clients = DataBaseManager.GetClients(client.RoomName);
-        
+
         ServerMessage[]? res = null;
         switch (data.TypeCase)
         {
@@ -40,20 +39,15 @@ public static class EventService
         }
 
         if (res is not null)
-        {
             foreach (var r in res)
-            {
-                foreach (var c in clients)
-                {
-                    c.SendAsync(r.ToByteArray()).Forget();
-                }
-            }
-        }
+            foreach (var c in clients)
+                c.SendAsync(r.ToByteArray()).Forget();
     }
 
     private static async UniTask<ServerMessage[]?> OnRoomJoinRequest(Client client, RoomJoinRequest req)
     {
-        return await UniTask.Run<ServerMessage[]?>(() => { 
+        return await UniTask.Run<ServerMessage[]?>(() =>
+        {
             var roomName = req.Data.RoomCode;
             var room = DataBaseManager.GetRoom(roomName);
             if (room is null)
@@ -61,12 +55,12 @@ public static class EventService
                 room = new Room
                 {
                     RoomName = roomName,
-                    UserIDs = {client.UserID},
-                    UserOrder = {[client.UserID] = 0},
-                    UserOtoshidama = {[client.UserID] = 0},
-                    UserPosition = {[client.UserID] = 0},
-                    UserIsAnswered = {[client.UserID] = false},
-                    UserAnswer = {[client.UserID] = 0}
+                    UserIDs = { client.UserID },
+                    UserOrder = { [client.UserID] = 0 },
+                    UserOtoshidama = { [client.UserID] = 0 },
+                    UserPosition = { [client.UserID] = 0 },
+                    UserIsAnswered = { [client.UserID] = false },
+                    UserAnswer = { [client.UserID] = 0 }
                 };
                 DataBaseManager.AddRoomData(room);
             }
@@ -80,7 +74,7 @@ public static class EventService
                 room.UserAnswer.Add(client.UserID, 0);
                 DataBaseManager.UpdateRoomData(room);
             }
-            
+
             client.RoomName = roomName;
             client.Nickname = req.Data.Nickname;
             DataBaseManager.UpdateClientData(client);
@@ -100,7 +94,8 @@ public static class EventService
 
             UniTask.Run(() =>
             {
-                var alreadyJoinedClients = DataBaseManager.GetClients(roomName).Where(c => c.GlobalUserId != client.GlobalUserId);
+                var alreadyJoinedClients = DataBaseManager.GetClients(roomName)
+                    .Where(c => c.GlobalUserId != client.GlobalUserId);
                 foreach (var c in alreadyJoinedClients)
                 {
                     var res2 = new ServerMessage
@@ -118,14 +113,15 @@ public static class EventService
                     client.SendAsync(res2.ToByteArray()).Forget();
                 }
             });
-            
+
             return [res];
         });
     }
-    
+
     private static async UniTask<ServerMessage[]?> OnRoomLeaveRequest(Client client, RoomLeaveRequest req)
     {
-        return await UniTask.Run<ServerMessage[]?>(() => { 
+        return await UniTask.Run<ServerMessage[]?>(() =>
+        {
             var room = DataBaseManager.GetRoom(client.RoomName);
             if (room is null)
                 return null;
@@ -136,7 +132,7 @@ public static class EventService
             room.UserIsAnswered.Remove(client.UserID);
             room.UserAnswer.Remove(client.UserID);
             DataBaseManager.UpdateRoomData(room);
-            
+
             client.RoomName = string.Empty;
             DataBaseManager.UpdateClientData(client);
             Console.WriteLine("Room Left");

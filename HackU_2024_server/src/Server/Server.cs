@@ -1,6 +1,6 @@
-﻿using System.Net.WebSockets;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
+using System.Net.WebSockets;
 using Cysharp.Threading.Tasks;
 using HackU_2024_server.DataBase;
 using HackU_2024_server.Service;
@@ -11,13 +11,13 @@ public static class Server
 {
     private static bool _isRunning;
     private static readonly TcpListener TcpListener = new(IPAddress.Any, 8080);
-    
+
     public static async UniTask Start()
     {
         Console.WriteLine("Server Start");
-        
+
         _isRunning = true;
-        
+
         TcpListener.Start();
 
         while (_isRunning)
@@ -31,10 +31,8 @@ public static class Server
     {
         var clients = DataBaseManager.GetClients(client.RoomName).Where(c => c.GlobalUserId != client.GlobalUserId);
         foreach (var c in clients)
-        {
             if (c.Socket != null)
                 await c.Socket.CloseAsync(WebSocketCloseStatus.Empty, string.Empty, CancellationToken.None);
-        }
         DataBaseManager.RemoveClientData(client);
     }
 

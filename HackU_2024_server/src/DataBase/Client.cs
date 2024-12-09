@@ -1,7 +1,8 @@
-﻿using System.Net;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Net.WebSockets;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using Cysharp.Threading.Tasks;
 using MasterMemory;
 using MessagePack;
@@ -16,14 +17,18 @@ public partial class Client : IDisposable
 
     [SecondaryKey(0)] public string UserID { get; set; } = string.Empty;
 
-    [SecondaryKey(1) , NonUnique]
-    public string RoomName { get; set; } = string.Empty;
+    [SecondaryKey(1)] [NonUnique] public string RoomName { get; set; } = string.Empty;
 
     public string Nickname { get; set; } = string.Empty;
-    
+
     public WebSocket? Socket { get; private set; }
-    
+
     private TcpClient? TcpClient { get; set; }
+
+    public void Dispose()
+    {
+        Socket?.Dispose();
+    }
 
     public async UniTask InitializeAsync(TcpClient tcpClient)
     {
@@ -35,8 +40,7 @@ public partial class Client : IDisposable
         if (request.Contains("Upgrade: websocket"))
         {
             var response = "HTTP/1.1 101 Switching Protocols\r\n" + "Connection: Upgrade\r\n" +
-                           "Upgrade: websocket\r\n" + "Sec-WebSocket-Accept: " + Convert.ToBase64String(System.Security
-                               .Cryptography.SHA1.Create()
+                           "Upgrade: websocket\r\n" + "Sec-WebSocket-Accept: " + Convert.ToBase64String(SHA1.Create()
                                .ComputeHash(Encoding.UTF8.GetBytes(
                                    MyRegex().Match(request)
                                        .Groups[1].Value.Trim() + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"))) + "\r\n\r\n";
@@ -64,7 +68,7 @@ public partial class Client : IDisposable
                 await closeHandler(this);
                 break;
             }
-            
+
             var size = result.Count;
             var byteArray = new byte[size];
             Array.Copy(buffer, byteArray, size);
@@ -75,7 +79,7 @@ public partial class Client : IDisposable
 
         await closeHandler(this);
     }
-    
+
     public async UniTask SendAsync(byte[] data)
     {
         if (Socket != null)
@@ -83,12 +87,7 @@ public partial class Client : IDisposable
                 CancellationToken.None);
     }
 
-    public void Dispose()
-    {
-        Socket?.Dispose();
-    }
-    
-    
-    [System.Text.RegularExpressions.GeneratedRegex("Sec-WebSocket-Key: (.*)")]
-    private static partial System.Text.RegularExpressions.Regex MyRegex();
+
+    [GeneratedRegex("Sec-WebSocket-Key: (.*)")]
+    private static partial Regex MyRegex();
 }
