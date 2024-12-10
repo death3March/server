@@ -53,6 +53,7 @@ message QuizStart {
     string playerId = 1;
     string quizQuestion = 2;
     repeated string options = 3;
+    string answer = 4;
   }
 }
 
@@ -61,9 +62,10 @@ message QuizResult {
   Data data = 2;
 
   message Data {
-    int32 correctPlayerId = 1;
+    string PlayerId = 1;
     int32 otoshidamaAmount = 2;
     string message = 3;
+    bool isCorrect = 4;
   }
 }
 
@@ -104,7 +106,7 @@ message GameEnd {
   Data data = 2;
 
   message Data {
-    string playerId = 1;
+    map<string, int32> playerScores = 1;
   }
 }
 

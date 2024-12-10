@@ -20,7 +20,8 @@ public class Room
     public Dictionary<string, int> UserOtoshidama { get; set; } = new();
     public Dictionary<string, int> UserPosition { get; set; } = new();
     public Dictionary<string, bool> UserIsAnswered { get; set; } = new();
-    public Dictionary<string, int> UserAnswer { get; set; } = new();
+    public Dictionary<string, int?> UserIsAnsweredOrder { get; set; } = new();
+    public Dictionary<string, string> UserAnswer { get; set; } = new();
     public QuizStart? QuizData { get; set; } = null;
     public RoomState State { get; set; } = RoomState.Waiting;
     public GameStart.Types.Data.Types.Map? SugorokuMap { get; set; } = null;

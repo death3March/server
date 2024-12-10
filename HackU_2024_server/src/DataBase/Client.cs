@@ -17,7 +17,7 @@ public partial class Client : IDisposable
 
     [SecondaryKey(0)] public string UserID { get; set; } = string.Empty;
 
-    [SecondaryKey(1)] [NonUnique] public string RoomName { get; set; } = string.Empty;
+    [SecondaryKey(1), NonUnique] public string RoomName { get; set; } = string.Empty;
 
     public string Nickname { get; set; } = string.Empty;
 

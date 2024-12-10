@@ -8,7 +8,8 @@ using MessagePack;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net.WebSockets;
-using System.Net;
+using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
@@ -119,8 +120,6 @@ namespace HackU_2024_server.Tables
                     new MasterMemory.Meta.MetaProperty(typeof(Client).GetProperty("Nickname")),
                     new MasterMemory.Meta.MetaProperty(typeof(Client).GetProperty("Socket")),
                     new MasterMemory.Meta.MetaProperty(typeof(Client).GetProperty("TcpClient")),
-                    new MasterMemory.Meta.MetaProperty(typeof(Client).GetProperty("Otoshidama")),
-                    new MasterMemory.Meta.MetaProperty(typeof(Client).GetProperty("Position")),
                 },
                 new MasterMemory.Meta.MetaIndex[]{
                     new MasterMemory.Meta.MetaIndex(new System.Reflection.PropertyInfo[] {

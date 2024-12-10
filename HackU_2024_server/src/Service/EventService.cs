@@ -28,6 +28,16 @@ public static class EventService
             case ClientMessage.TypeOneofCase.GameEndRequest:
                 break;
             case ClientMessage.TypeOneofCase.QuizAnswer:
+                res = await QuizService.OnQuizAnswerAsync(client, data.QuizAnswer);
+                var correctUsers = QuizService.CheckCorrect(client.RoomName);
+                if (correctUsers is not null)
+                {
+                    var resultRes = QuizService.QuizResult(client.RoomName, correctUsers);
+                    if (resultRes is not null)
+                    {
+                        res = res?.Concat(resultRes).ToArray();
+                    }
+                }
                 break;
             case ClientMessage.TypeOneofCase.TurnEndNotification:
                 res = GameService.NextTurn(client, data.TurnEndNotification);
@@ -60,7 +70,8 @@ public static class EventService
                     UserOtoshidama = { [client.UserID] = 0 },
                     UserPosition = { [client.UserID] = 0 },
                     UserIsAnswered = { [client.UserID] = false },
-                    UserAnswer = { [client.UserID] = 0 }
+                    UserAnswer = { [client.UserID] = string.Empty },
+                    UserIsAnsweredOrder = { [client.UserID ] = null}
                 };
                 DataBaseManager.AddRoomData(room);
             }
@@ -71,7 +82,8 @@ public static class EventService
                 room.UserOtoshidama.Add(client.UserID, 0);
                 room.UserPosition.Add(client.UserID, 0);
                 room.UserIsAnswered.Add(client.UserID, false);
-                room.UserAnswer.Add(client.UserID, 0);
+                room.UserAnswer.Add(client.UserID, string.Empty);
+                room.UserIsAnsweredOrder.Add(client.UserID, null);
                 DataBaseManager.UpdateRoomData(room);
             }
 

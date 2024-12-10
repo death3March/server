@@ -38,14 +38,16 @@ public static class GameService
             var userOtoshidama = new Dictionary<string, int>();
             var userPosition = new Dictionary<string, int>();
             var userIsAnswered = new Dictionary<string, bool>();
-            var userAnswer = new Dictionary<string, int>();
+            var userAnswer = new Dictionary<string, string>();
+            var userIsAnsweredOrder = new Dictionary<string, int?>();
             for (var i = 0; i < roomUsersNum; i++)
             {
                 userOrder.Add(room.UserIDs[i], order[i]);
                 userOtoshidama.Add(room.UserIDs[i], 0);
                 userPosition.Add(room.UserIDs[i], 0);
                 userIsAnswered.Add(room.UserIDs[i], false);
-                userAnswer.Add(room.UserIDs[i], 0);
+                userAnswer.Add(room.UserIDs[i], string.Empty);
+                userIsAnsweredOrder.Add(room.UserIDs[i], null);
             }
 
             room.UserOrder = userOrder;
@@ -53,6 +55,7 @@ public static class GameService
             room.UserPosition = userPosition;
             room.UserIsAnswered = userIsAnswered;
             room.UserAnswer = userAnswer;
+            room.UserIsAnsweredOrder = userIsAnsweredOrder;
             DataBaseManager.UpdateRoomData(room);
 
             var gameStartRes = new ServerMessage
@@ -79,6 +82,9 @@ public static class GameService
             var num = new Random().Next(0, 4);
             squares.Add((GameStart.Types.Data.Types.Map.Types.squareType)num);
         }
+        
+        squares[0] = GameStart.Types.Data.Types.Map.Types.squareType.Normal;
+        squares[^1] = GameStart.Types.Data.Types.Map.Types.squareType.Normal;
 
         var map = new GameStart.Types.Data.Types.Map
         {
@@ -98,7 +104,7 @@ public static class GameService
         return res;
     }
 
-    public static ServerMessage[]? TurnStart(Room room, int order)
+    private static ServerMessage[]? TurnStart(Room room, int order)
     {
         if (room.SugorokuMap is null) return null;
         var thisTurnUserID = room.UserOrder.FirstOrDefault(x => x.Value == order).Key;
@@ -131,28 +137,62 @@ public static class GameService
                 }
             }
         };
-        res.Add(moveRes);
-        if (room.SugorokuMap.Squares[thisTurnUserPosition] !=
-            GameStart.Types.Data.Types.Map.Types.squareType.Otoshidama) return res.ToArray();
-        var otoshidamaRes = new ServerMessage
+        switch (room.SugorokuMap.Squares[thisTurnUserPosition])
         {
-            OtoshidamaEvent = new OtoshidamaEvent
-            {
-                Data = new OtoshidamaEvent.Types.Data
+            case GameStart.Types.Data.Types.Map.Types.squareType.Normal:
+                break;
+            case GameStart.Types.Data.Types.Map.Types.squareType.Quiz:
+                var quizArray = QuizService.Quiz(thisTurnUserID);
+                var quiz = quizArray[Roulette(0, quizArray.Length - 1)];
+                room.QuizData = quiz.QuizStart;
+                res.Add(quiz);
+                DataBaseManager.UpdateRoomData(room);
+                break;
+            case GameStart.Types.Data.Types.Map.Types.squareType.Otoshidama:
+                var otoshidamaRes = new ServerMessage
                 {
-                    PlayerId = thisTurnUserID,
-                    OtoshidamaAmount = Roulette(1, 10) * 1000
-                    //Message = "おとし玉イベント"
-                }
-            }
-        };
-        res.Add(otoshidamaRes);
-
+                    OtoshidamaEvent = new OtoshidamaEvent
+                    {
+                        Data = new OtoshidamaEvent.Types.Data
+                        {
+                            PlayerId = thisTurnUserID,
+                            OtoshidamaAmount = Roulette(1, 10) * 1000
+                            //Message = "おとし玉イベント"
+                        }
+                    }
+                };
+                res.Add(otoshidamaRes);
+                break;
+            case GameStart.Types.Data.Types.Map.Types.squareType.Furidashi:
+                moveRes.PlayerMovementDisplay.Data.NewPosition = 0;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(room.SugorokuMap.Squares[thisTurnUserPosition].GetType().ToString());
+        }
+        res.Insert(0, moveRes);
         return res.ToArray();
     }
 
-    public static ServerMessage[]? OnGameEndRequest()
+    public static ServerMessage[]? OnGameEndRequest(Client client, GameEnd req)
     {
-        return null;
+        var room = DataBaseManager.GetRoom(client.RoomName);
+        if (room is null) return null;
+        var users = room.UserIDs;
+        var score = users.ToDictionary(u => u, u => room.UserOtoshidama[u] + room.UserPosition[u] * 100);
+        var scoreRes = new MapField<string, int>
+        {
+            score
+        };
+        var res = new ServerMessage
+        {
+            GameEnd = new GameEnd
+            {
+                Data = new GameEnd.Types.Data
+                {
+                    PlayerScores = { scoreRes }
+                }
+            }
+        };
+        return [res];
     }
 }

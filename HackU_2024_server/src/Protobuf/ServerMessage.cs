@@ -40,30 +40,33 @@ public static partial class ServerMessageReflection {
           "ZBgCIAEoBRITCgtuZXdQb3NpdGlvbhgDIAEoBSJ/ChVQbGF5ZXJNb3ZlbWVu",
           "dERpc3BsYXkSDAoEdHlwZRgBIAEoCRIpCgRkYXRhGAIgASgLMhsuUGxheWVy",
           "TW92ZW1lbnREaXNwbGF5LkRhdGEaLQoERGF0YRIQCghwbGF5ZXJJZBgBIAEo",
-          "CRITCgtuZXdQb3NpdGlvbhgCIAEoBSJ5CglRdWl6U3RhcnQSDAoEdHlwZRgB",
-          "IAEoCRIdCgRkYXRhGAIgASgLMg8uUXVpelN0YXJ0LkRhdGEaPwoERGF0YRIQ",
-          "CghwbGF5ZXJJZBgBIAEoCRIUCgxxdWl6UXVlc3Rpb24YAiABKAkSDwoHb3B0",
-          "aW9ucxgDIAMoCSKGAQoKUXVpelJlc3VsdBIMCgR0eXBlGAEgASgJEh4KBGRh",
-          "dGEYAiABKAsyEC5RdWl6UmVzdWx0LkRhdGEaSgoERGF0YRIXCg9jb3JyZWN0",
-          "UGxheWVySWQYASABKAUSGAoQb3Rvc2hpZGFtYUFtb3VudBgCIAEoBRIPCgdt",
-          "ZXNzYWdlGAMgASgJIokBCg9PdG9zaGlkYW1hRXZlbnQSDAoEdHlwZRgBIAEo",
-          "CRIjCgRkYXRhGAIgASgLMhUuT3Rvc2hpZGFtYUV2ZW50LkRhdGEaQwoERGF0",
-          "YRIQCghwbGF5ZXJJZBgBIAEoCRIPCgdtZXNzYWdlGAIgASgJEhgKEG90b3No",
-          "aWRhbWFBbW91bnQYAyABKAUi8QEKCUdhbWVTdGFydBIMCgR0eXBlGAEgASgJ",
-          "Eh0KBGRhdGEYAiABKAsyDy5HYW1lU3RhcnQuRGF0YRq2AQoERGF0YRIRCglw",
-          "bGF5ZXJJZHMYASADKAkSIAoDbWFwGAIgASgLMhMuR2FtZVN0YXJ0LkRhdGEu",
-          "TWFwGnkKA01hcBIvCgdzcXVhcmVzGAEgAygOMh4uR2FtZVN0YXJ0LkRhdGEu",
-          "TWFwLnNxdWFyZVR5cGUiQQoKc3F1YXJlVHlwZRIKCgZOT1JNQUwQABIICgRR",
-          "VUlaEAESDgoKT1RPU0hJREFNQRACEg0KCUZVUklEQVNISRADIk4KB0dhbWVF",
-          "bmQSDAoEdHlwZRgBIAEoCRIbCgRkYXRhGAIgASgLMg0uR2FtZUVuZC5EYXRh",
-          "GhgKBERhdGESEAoIcGxheWVySWQYASABKAkipgEKDVJhbmtpbmdVcGRhdGUS",
-          "DAoEdHlwZRgBIAEoCRIhCgRkYXRhGAIgASgLMhMuUmFua2luZ1VwZGF0ZS5E",
-          "YXRhGmQKBERhdGESLQoIcmFua2luZ3MYASADKAsyGy5SYW5raW5nVXBkYXRl",
-          "LkRhdGEuUmFua2luZxotCgdSYW5raW5nEhAKCHBsYXllcklkGAEgASgJEhAK",
-          "CHBvc2l0aW9uGAIgASgFIoQBChBSb29tSm9pblJlc3BvbnNlEgwKBHR5cGUY",
-          "ASABKAkSJAoEZGF0YRgCIAEoCzIWLlJvb21Kb2luUmVzcG9uc2UuRGF0YRo8",
-          "CgREYXRhEhAKCHBsYXllcklkGAEgASgJEhAKCG5pY2tuYW1lGAIgASgJEhAK",
-          "CHJvb21Db2RlGAMgASgJYgZwcm90bzM="));
+          "CRITCgtuZXdQb3NpdGlvbhgCIAEoBSKJAQoJUXVpelN0YXJ0EgwKBHR5cGUY",
+          "ASABKAkSHQoEZGF0YRgCIAEoCzIPLlF1aXpTdGFydC5EYXRhGk8KBERhdGES",
+          "EAoIcGxheWVySWQYASABKAkSFAoMcXVpelF1ZXN0aW9uGAIgASgJEg8KB29w",
+          "dGlvbnMYAyADKAkSDgoGYW5zd2VyGAQgASgJIpIBCgpRdWl6UmVzdWx0EgwK",
+          "BHR5cGUYASABKAkSHgoEZGF0YRgCIAEoCzIQLlF1aXpSZXN1bHQuRGF0YRpW",
+          "CgREYXRhEhAKCFBsYXllcklkGAEgASgJEhgKEG90b3NoaWRhbWFBbW91bnQY",
+          "AiABKAUSDwoHbWVzc2FnZRgDIAEoCRIRCglpc0NvcnJlY3QYBCABKAgiiQEK",
+          "D090b3NoaWRhbWFFdmVudBIMCgR0eXBlGAEgASgJEiMKBGRhdGEYAiABKAsy",
+          "FS5PdG9zaGlkYW1hRXZlbnQuRGF0YRpDCgREYXRhEhAKCHBsYXllcklkGAEg",
+          "ASgJEg8KB21lc3NhZ2UYAiABKAkSGAoQb3Rvc2hpZGFtYUFtb3VudBgDIAEo",
+          "BSLxAQoJR2FtZVN0YXJ0EgwKBHR5cGUYASABKAkSHQoEZGF0YRgCIAEoCzIP",
+          "LkdhbWVTdGFydC5EYXRhGrYBCgREYXRhEhEKCXBsYXllcklkcxgBIAMoCRIg",
+          "CgNtYXAYAiABKAsyEy5HYW1lU3RhcnQuRGF0YS5NYXAaeQoDTWFwEi8KB3Nx",
+          "dWFyZXMYASADKA4yHi5HYW1lU3RhcnQuRGF0YS5NYXAuc3F1YXJlVHlwZSJB",
+          "CgpzcXVhcmVUeXBlEgoKBk5PUk1BTBAAEggKBFFVSVoQARIOCgpPVE9TSElE",
+          "QU1BEAISDQoJRlVSSURBU0hJEAMiqAEKB0dhbWVFbmQSDAoEdHlwZRgBIAEo",
+          "CRIbCgRkYXRhGAIgASgLMg0uR2FtZUVuZC5EYXRhGnIKBERhdGESNQoMcGxh",
+          "eWVyU2NvcmVzGAEgAygLMh8uR2FtZUVuZC5EYXRhLlBsYXllclNjb3Jlc0Vu",
+          "dHJ5GjMKEVBsYXllclNjb3Jlc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1",
+          "ZRgCIAEoBToCOAEipgEKDVJhbmtpbmdVcGRhdGUSDAoEdHlwZRgBIAEoCRIh",
+          "CgRkYXRhGAIgASgLMhMuUmFua2luZ1VwZGF0ZS5EYXRhGmQKBERhdGESLQoI",
+          "cmFua2luZ3MYASADKAsyGy5SYW5raW5nVXBkYXRlLkRhdGEuUmFua2luZxot",
+          "CgdSYW5raW5nEhAKCHBsYXllcklkGAEgASgJEhAKCHBvc2l0aW9uGAIgASgF",
+          "IoQBChBSb29tSm9pblJlc3BvbnNlEgwKBHR5cGUYASABKAkSJAoEZGF0YRgC",
+          "IAEoCzIWLlJvb21Kb2luUmVzcG9uc2UuRGF0YRo8CgREYXRhEhAKCHBsYXll",
+          "cklkGAEgASgJEhAKCG5pY2tuYW1lGAIgASgJEhAKCHJvb21Db2RlGAMgASgJ",
+          "YgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -71,11 +74,11 @@ public static partial class ServerMessageReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::PlayerTurnStart), global::PlayerTurnStart.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::PlayerTurnStart.Types.Data), global::PlayerTurnStart.Types.Data.Parser, new[]{ "PlayerId" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::SugorokuMoveUpdate), global::SugorokuMoveUpdate.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::SugorokuMoveUpdate.Types.Data), global::SugorokuMoveUpdate.Types.Data.Parser, new[]{ "PlayerId", "StepsMoved", "NewPosition" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::PlayerMovementDisplay), global::PlayerMovementDisplay.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::PlayerMovementDisplay.Types.Data), global::PlayerMovementDisplay.Types.Data.Parser, new[]{ "PlayerId", "NewPosition" }, null, null, null, null)}),
-          new pbr::GeneratedClrTypeInfo(typeof(global::QuizStart), global::QuizStart.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QuizStart.Types.Data), global::QuizStart.Types.Data.Parser, new[]{ "PlayerId", "QuizQuestion", "Options" }, null, null, null, null)}),
-          new pbr::GeneratedClrTypeInfo(typeof(global::QuizResult), global::QuizResult.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QuizResult.Types.Data), global::QuizResult.Types.Data.Parser, new[]{ "CorrectPlayerId", "OtoshidamaAmount", "Message" }, null, null, null, null)}),
+          new pbr::GeneratedClrTypeInfo(typeof(global::QuizStart), global::QuizStart.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QuizStart.Types.Data), global::QuizStart.Types.Data.Parser, new[]{ "PlayerId", "QuizQuestion", "Options", "Answer" }, null, null, null, null)}),
+          new pbr::GeneratedClrTypeInfo(typeof(global::QuizResult), global::QuizResult.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QuizResult.Types.Data), global::QuizResult.Types.Data.Parser, new[]{ "PlayerId", "OtoshidamaAmount", "Message", "IsCorrect" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::OtoshidamaEvent), global::OtoshidamaEvent.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::OtoshidamaEvent.Types.Data), global::OtoshidamaEvent.Types.Data.Parser, new[]{ "PlayerId", "Message", "OtoshidamaAmount" }, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::GameStart), global::GameStart.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameStart.Types.Data), global::GameStart.Types.Data.Parser, new[]{ "PlayerIds", "Map" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameStart.Types.Data.Types.Map), global::GameStart.Types.Data.Types.Map.Parser, new[]{ "Squares" }, null, new[]{ typeof(global::GameStart.Types.Data.Types.Map.Types.squareType) }, null, null)})}),
-          new pbr::GeneratedClrTypeInfo(typeof(global::GameEnd), global::GameEnd.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameEnd.Types.Data), global::GameEnd.Types.Data.Parser, new[]{ "PlayerId" }, null, null, null, null)}),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GameEnd), global::GameEnd.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GameEnd.Types.Data), global::GameEnd.Types.Data.Parser, new[]{ "PlayerScores" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })}),
           new pbr::GeneratedClrTypeInfo(typeof(global::RankingUpdate), global::RankingUpdate.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RankingUpdate.Types.Data), global::RankingUpdate.Types.Data.Parser, new[]{ "Rankings" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RankingUpdate.Types.Data.Types.Ranking), global::RankingUpdate.Types.Data.Types.Ranking.Parser, new[]{ "PlayerId", "Position" }, null, null, null, null)})}),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoomJoinResponse), global::RoomJoinResponse.Parser, new[]{ "Type", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RoomJoinResponse.Types.Data), global::RoomJoinResponse.Types.Data.Parser, new[]{ "PlayerId", "Nickname", "RoomCode" }, null, null, null, null)})
         }));
@@ -2560,6 +2563,7 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
         playerId_ = other.playerId_;
         quizQuestion_ = other.quizQuestion_;
         options_ = other.options_.Clone();
+        answer_ = other.answer_;
         _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       }
 
@@ -2604,6 +2608,18 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
         get { return options_; }
       }
 
+      /// <summary>Field number for the "answer" field.</summary>
+      public const int AnswerFieldNumber = 4;
+      private string answer_ = "";
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+      public string Answer {
+        get { return answer_; }
+        set {
+          answer_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        }
+      }
+
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override bool Equals(object other) {
@@ -2622,6 +2638,7 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
         if (PlayerId != other.PlayerId) return false;
         if (QuizQuestion != other.QuizQuestion) return false;
         if(!options_.Equals(other.options_)) return false;
+        if (Answer != other.Answer) return false;
         return Equals(_unknownFields, other._unknownFields);
       }
 
@@ -2632,6 +2649,7 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
         if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (QuizQuestion.Length != 0) hash ^= QuizQuestion.GetHashCode();
         hash ^= options_.GetHashCode();
+        if (Answer.Length != 0) hash ^= Answer.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -2659,6 +2677,10 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
           output.WriteString(QuizQuestion);
         }
         options_.WriteTo(output, _repeated_options_codec);
+        if (Answer.Length != 0) {
+          output.WriteRawTag(34);
+          output.WriteString(Answer);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
         }
@@ -2678,6 +2700,10 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
           output.WriteString(QuizQuestion);
         }
         options_.WriteTo(ref output, _repeated_options_codec);
+        if (Answer.Length != 0) {
+          output.WriteRawTag(34);
+          output.WriteString(Answer);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
         }
@@ -2695,6 +2721,9 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
           size += 1 + pb::CodedOutputStream.ComputeStringSize(QuizQuestion);
         }
         size += options_.CalculateSize(_repeated_options_codec);
+        if (Answer.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(Answer);
+        }
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
         }
@@ -2714,6 +2743,9 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
           QuizQuestion = other.QuizQuestion;
         }
         options_.Add(other.options_);
+        if (other.Answer.Length != 0) {
+          Answer = other.Answer;
+        }
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
       }
 
@@ -2745,6 +2777,10 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
               options_.AddEntriesFrom(input, _repeated_options_codec);
               break;
             }
+            case 34: {
+              Answer = input.ReadString();
+              break;
+            }
           }
         }
       #endif
@@ -2774,6 +2810,10 @@ public sealed partial class QuizStart : pb::IMessage<QuizStart>
             }
             case 26: {
               options_.AddEntriesFrom(ref input, _repeated_options_codec);
+              break;
+            }
+            case 34: {
+              Answer = input.ReadString();
               break;
             }
           }
@@ -3073,9 +3113,10 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public Data(Data other) : this() {
-        correctPlayerId_ = other.correctPlayerId_;
+        playerId_ = other.playerId_;
         otoshidamaAmount_ = other.otoshidamaAmount_;
         message_ = other.message_;
+        isCorrect_ = other.isCorrect_;
         _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       }
 
@@ -3085,15 +3126,15 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
         return new Data(this);
       }
 
-      /// <summary>Field number for the "correctPlayerId" field.</summary>
-      public const int CorrectPlayerIdFieldNumber = 1;
-      private int correctPlayerId_;
+      /// <summary>Field number for the "PlayerId" field.</summary>
+      public const int PlayerIdFieldNumber = 1;
+      private string playerId_ = "";
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int CorrectPlayerId {
-        get { return correctPlayerId_; }
+      public string PlayerId {
+        get { return playerId_; }
         set {
-          correctPlayerId_ = value;
+          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         }
       }
 
@@ -3121,6 +3162,18 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
         }
       }
 
+      /// <summary>Field number for the "isCorrect" field.</summary>
+      public const int IsCorrectFieldNumber = 4;
+      private bool isCorrect_;
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+      public bool IsCorrect {
+        get { return isCorrect_; }
+        set {
+          isCorrect_ = value;
+        }
+      }
+
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override bool Equals(object other) {
@@ -3136,9 +3189,10 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
         if (ReferenceEquals(other, this)) {
           return true;
         }
-        if (CorrectPlayerId != other.CorrectPlayerId) return false;
+        if (PlayerId != other.PlayerId) return false;
         if (OtoshidamaAmount != other.OtoshidamaAmount) return false;
         if (Message != other.Message) return false;
+        if (IsCorrect != other.IsCorrect) return false;
         return Equals(_unknownFields, other._unknownFields);
       }
 
@@ -3146,9 +3200,10 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (CorrectPlayerId != 0) hash ^= CorrectPlayerId.GetHashCode();
+        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
         if (OtoshidamaAmount != 0) hash ^= OtoshidamaAmount.GetHashCode();
         if (Message.Length != 0) hash ^= Message.GetHashCode();
+        if (IsCorrect != false) hash ^= IsCorrect.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -3167,9 +3222,9 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (CorrectPlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(CorrectPlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (OtoshidamaAmount != 0) {
           output.WriteRawTag(16);
@@ -3178,6 +3233,10 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
         if (Message.Length != 0) {
           output.WriteRawTag(26);
           output.WriteString(Message);
+        }
+        if (IsCorrect != false) {
+          output.WriteRawTag(32);
+          output.WriteBool(IsCorrect);
         }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
@@ -3189,9 +3248,9 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (CorrectPlayerId != 0) {
-          output.WriteRawTag(8);
-          output.WriteInt32(CorrectPlayerId);
+        if (PlayerId.Length != 0) {
+          output.WriteRawTag(10);
+          output.WriteString(PlayerId);
         }
         if (OtoshidamaAmount != 0) {
           output.WriteRawTag(16);
@@ -3200,6 +3259,10 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
         if (Message.Length != 0) {
           output.WriteRawTag(26);
           output.WriteString(Message);
+        }
+        if (IsCorrect != false) {
+          output.WriteRawTag(32);
+          output.WriteBool(IsCorrect);
         }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
@@ -3211,14 +3274,17 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (CorrectPlayerId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeInt32Size(CorrectPlayerId);
+        if (PlayerId.Length != 0) {
+          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
         }
         if (OtoshidamaAmount != 0) {
           size += 1 + pb::CodedOutputStream.ComputeInt32Size(OtoshidamaAmount);
         }
         if (Message.Length != 0) {
           size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+        }
+        if (IsCorrect != false) {
+          size += 1 + 1;
         }
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
@@ -3232,14 +3298,17 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
         if (other == null) {
           return;
         }
-        if (other.CorrectPlayerId != 0) {
-          CorrectPlayerId = other.CorrectPlayerId;
+        if (other.PlayerId.Length != 0) {
+          PlayerId = other.PlayerId;
         }
         if (other.OtoshidamaAmount != 0) {
           OtoshidamaAmount = other.OtoshidamaAmount;
         }
         if (other.Message.Length != 0) {
           Message = other.Message;
+        }
+        if (other.IsCorrect != false) {
+          IsCorrect = other.IsCorrect;
         }
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
       }
@@ -3260,8 +3329,8 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
-            case 8: {
-              CorrectPlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 16: {
@@ -3270,6 +3339,10 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
             }
             case 26: {
               Message = input.ReadString();
+              break;
+            }
+            case 32: {
+              IsCorrect = input.ReadBool();
               break;
             }
           }
@@ -3291,8 +3364,8 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
             default:
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
-            case 8: {
-              CorrectPlayerId = input.ReadInt32();
+            case 10: {
+              PlayerId = input.ReadString();
               break;
             }
             case 16: {
@@ -3301,6 +3374,10 @@ public sealed partial class QuizResult : pb::IMessage<QuizResult>
             }
             case 26: {
               Message = input.ReadString();
+              break;
+            }
+            case 32: {
+              IsCorrect = input.ReadBool();
               break;
             }
           }
@@ -4827,7 +4904,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public Data(Data other) : this() {
-        playerId_ = other.playerId_;
+        playerScores_ = other.playerScores_.Clone();
         _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       }
 
@@ -4837,16 +4914,15 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
         return new Data(this);
       }
 
-      /// <summary>Field number for the "playerId" field.</summary>
-      public const int PlayerIdFieldNumber = 1;
-      private string playerId_ = "";
+      /// <summary>Field number for the "playerScores" field.</summary>
+      public const int PlayerScoresFieldNumber = 1;
+      private static readonly pbc::MapField<string, int>.Codec _map_playerScores_codec
+          = new pbc::MapField<string, int>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForInt32(16, 0), 10);
+      private readonly pbc::MapField<string, int> playerScores_ = new pbc::MapField<string, int>();
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public string PlayerId {
-        get { return playerId_; }
-        set {
-          playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-        }
+      public pbc::MapField<string, int> PlayerScores {
+        get { return playerScores_; }
       }
 
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4864,7 +4940,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
         if (ReferenceEquals(other, this)) {
           return true;
         }
-        if (PlayerId != other.PlayerId) return false;
+        if (!PlayerScores.Equals(other.PlayerScores)) return false;
         return Equals(_unknownFields, other._unknownFields);
       }
 
@@ -4872,7 +4948,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override int GetHashCode() {
         int hash = 1;
-        if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
+        hash ^= PlayerScores.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -4891,10 +4967,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         output.WriteRawMessage(this);
       #else
-        if (PlayerId.Length != 0) {
-          output.WriteRawTag(10);
-          output.WriteString(PlayerId);
-        }
+        playerScores_.WriteTo(output, _map_playerScores_codec);
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
         }
@@ -4905,10 +4978,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (PlayerId.Length != 0) {
-          output.WriteRawTag(10);
-          output.WriteString(PlayerId);
-        }
+        playerScores_.WriteTo(ref output, _map_playerScores_codec);
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
         }
@@ -4919,9 +4989,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public int CalculateSize() {
         int size = 0;
-        if (PlayerId.Length != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
-        }
+        size += playerScores_.CalculateSize(_map_playerScores_codec);
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
         }
@@ -4934,9 +5002,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
         if (other == null) {
           return;
         }
-        if (other.PlayerId.Length != 0) {
-          PlayerId = other.PlayerId;
-        }
+        playerScores_.MergeFrom(other.playerScores_);
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
       }
 
@@ -4957,7 +5023,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
               break;
             case 10: {
-              PlayerId = input.ReadString();
+              playerScores_.AddEntriesFrom(input, _map_playerScores_codec);
               break;
             }
           }
@@ -4980,7 +5046,7 @@ public sealed partial class GameEnd : pb::IMessage<GameEnd>
               _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
               break;
             case 10: {
-              PlayerId = input.ReadString();
+              playerScores_.AddEntriesFrom(ref input, _map_playerScores_codec);
               break;
             }
           }
