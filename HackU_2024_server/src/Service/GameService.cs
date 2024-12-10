@@ -173,7 +173,7 @@ public static class GameService
         return res.ToArray();
     }
 
-    public static ServerMessage[]? OnGameEndRequest(Client client, GameEnd req)
+    public static ServerMessage[]? OnGameEndRequest(Client client, GameEndRequest req)
     {
         var room = DataBaseManager.GetRoom(client.RoomName);
         if (room is null) return null;

@@ -26,6 +26,7 @@ public static class EventService
                 res = await GameService.OnGameStartRequest(client, data.GameStartRequest);
                 break;
             case ClientMessage.TypeOneofCase.GameEndRequest:
+                res = GameService.OnGameEndRequest(client, data.GameEndRequest);
                 break;
             case ClientMessage.TypeOneofCase.QuizAnswer:
                 res = await QuizService.OnQuizAnswerAsync(client, data.QuizAnswer);
