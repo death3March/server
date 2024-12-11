@@ -8,7 +8,7 @@ public static class EventService
 {
     public static async UniTask OnReceiveAsync(Client client, ClientMessage data)
     {
-        Console.WriteLine(nameof(data.TypeCase));
+        Console.WriteLine(data.TypeCase.ToString());
         var clients = DataBaseManager.GetClients(client.RoomName);
 
         ServerMessage[]? res = null;
@@ -50,9 +50,16 @@ public static class EventService
         }
 
         if (res is not null)
+        {
+            Console.WriteLine("Send Response");
             foreach (var r in res)
-            foreach (var c in clients)
-                c.SendAsync(r.ToByteArray()).Forget();
+            {
+                foreach (var c in clients)
+                {
+                    c.SendAsync(r.ToByteArray()).Forget();
+                }
+            }
+        }
     }
 
     private static async UniTask<ServerMessage[]?> OnRoomJoinRequest(Client client, RoomJoinRequest req)

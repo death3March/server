@@ -68,6 +68,7 @@ namespace HackU_2024_server.Tables
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("UserOtoshidama")),
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("UserPosition")),
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("UserIsAnswered")),
+                    new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("UserIsAnsweredOrder")),
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("UserAnswer")),
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("QuizData")),
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("State")),

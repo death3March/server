@@ -21,6 +21,7 @@ public static class GameService
                 return null;
             if (room.State != Room.RoomState.Waiting)
                 return null;
+            Console.WriteLine("GameStartRequest");
             room.State = Room.RoomState.Gaming;
 
             var roomUsersNum = room.UserIDs.Count;
@@ -69,7 +70,9 @@ public static class GameService
                     }
                 }
             };
+            Console.WriteLine("create GameStart res");
             var turnStartRes = TurnStart(room, 0);
+            Console.WriteLine("create TurnStart res");
             return turnStartRes is null ? null : ((ServerMessage[]) [gameStartRes]).Concat(turnStartRes).ToArray();
         });
     }
@@ -95,6 +98,7 @@ public static class GameService
 
     public static ServerMessage[]? NextTurn(Client client, TurnEndNotification req)
     {
+        Console.WriteLine("NextTurn");
         var thisTurnUserID = client.UserID;
         var room = DataBaseManager.GetRoom(client.RoomName);
         if (room is null) return null;
@@ -175,6 +179,7 @@ public static class GameService
 
     public static ServerMessage[]? OnGameEndRequest(Client client, GameEndRequest req)
     {
+        Console.WriteLine("GameEndRequest");
         var room = DataBaseManager.GetRoom(client.RoomName);
         if (room is null) return null;
         var users = room.UserIDs;

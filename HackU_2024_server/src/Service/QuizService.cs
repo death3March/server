@@ -79,6 +79,7 @@ public static class QuizService
     
     public static async UniTask<ServerMessage[]?> OnQuizAnswerAsync(Client client, QuizAnswer req)
     {
+        Console.WriteLine("QuizAnswer");
         return await UniTask.Run<ServerMessage[]?>(() =>
         {
             var room = DataBaseManager.GetRoom(client.RoomName);
@@ -119,6 +120,7 @@ public static class QuizService
             return null;
         if (room.State == Room.RoomState.Gaming)
             return null;
+        Console.WriteLine("QuizResult");
         var res = new ServerMessage[room.UserIDs.Count];
 
         var correctAnsweredOrder = room.UserIsAnsweredOrder
