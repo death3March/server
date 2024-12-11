@@ -111,6 +111,8 @@ public static class EventService
                     }
                 }
             };
+            client.SendAsync(res.ToByteArray()).Forget();
+            Console.WriteLine(ServerMessage.Parser.ParseFrom(res.ToByteArray()).RoomJoinResponse.Data.PlayerId);
 
             UniTask.Run(() =>
             {

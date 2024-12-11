@@ -18,9 +18,15 @@ public static class GameService
         {
             var room = DataBaseManager.GetRoom(client.RoomName);
             if (room is null)
+            {
+                Console.WriteLine("room is null");
                 return null;
+            }
             if (room.State != Room.RoomState.Waiting)
+            {
+                Console.WriteLine("room state is not waiting");
                 return null;
+            }
             Console.WriteLine("GameStartRequest");
             room.State = Room.RoomState.Gaming;
 
