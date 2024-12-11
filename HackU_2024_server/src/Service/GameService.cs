@@ -76,10 +76,12 @@ public static class GameService
                     }
                 }
             };
+            room.SugorokuMap = gameStartRes.GameStart.Data.Map;
+            DataBaseManager.UpdateRoomData(room);
             Console.WriteLine("create GameStart res");
             var turnStartRes = TurnStart(room, 0);
             Console.WriteLine("create TurnStart res");
-            return turnStartRes is null ? null : ((ServerMessage[]) [gameStartRes]).Concat(turnStartRes).ToArray();
+            return  turnStartRes is null ? null : ((ServerMessage[]) [gameStartRes]).Concat(turnStartRes).ToArray();
         });
     }
 

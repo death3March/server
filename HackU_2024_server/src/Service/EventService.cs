@@ -70,18 +70,7 @@ public static class EventService
             var room = DataBaseManager.GetRoom(roomName);
             if (room is null)
             {
-                room = new Room
-                {
-                    RoomName = roomName,
-                    UserIDs = { client.UserID },
-                    UserOrder = { [client.UserID] = 0 },
-                    UserOtoshidama = { [client.UserID] = 0 },
-                    UserPosition = { [client.UserID] = 0 },
-                    UserIsAnswered = { [client.UserID] = false },
-                    UserAnswer = { [client.UserID] = string.Empty },
-                    UserIsAnsweredOrder = { [client.UserID ] = null}
-                };
-                DataBaseManager.AddRoomData(room);
+                CreateRoom(client, roomName);
             }
             else
             {
@@ -112,7 +101,7 @@ public static class EventService
                 }
             };
             client.SendAsync(res.ToByteArray()).Forget();
-            Console.WriteLine(ServerMessage.Parser.ParseFrom(res.ToByteArray()).RoomJoinResponse.Data.PlayerId);
+            Console.WriteLine("player id : " + ServerMessage.Parser.ParseFrom(res.ToByteArray()).RoomJoinResponse.Data.PlayerId);
 
             UniTask.Run(() =>
             {
@@ -138,6 +127,25 @@ public static class EventService
 
             return [res];
         });
+    }
+
+    private static Room CreateRoom(Client client, string roomName)
+    {
+        var room = new Room
+        {
+            State = Room.RoomState.Waiting,
+            RoomName = roomName,
+            UserIDs = { client.UserID },
+            UserOrder = { [client.UserID] = 0 },
+            UserOtoshidama = { [client.UserID] = 0 },
+            UserPosition = { [client.UserID] = 0 },
+            UserIsAnswered = { [client.UserID] = false },
+            UserAnswer = { [client.UserID] = string.Empty },
+            UserIsAnsweredOrder = { [client.UserID ] = null}
+        };
+        Console.WriteLine("Room Created roomName : " + roomName);
+        DataBaseManager.AddRoomData(room);
+        return room;
     }
 
     private static async UniTask<ServerMessage[]?> OnRoomLeaveRequest(Client client, RoomLeaveRequest req)
