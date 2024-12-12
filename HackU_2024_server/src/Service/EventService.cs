@@ -9,7 +9,6 @@ public static class EventService
     public static async UniTask OnReceiveAsync(Client client, ClientMessage data)
     {
         Console.WriteLine(data.TypeCase.ToString());
-        var clients = DataBaseManager.GetClients(client.RoomName);
 
         ServerMessage[]? res = null;
         switch (data.TypeCase)
@@ -18,6 +17,7 @@ public static class EventService
                 break;
             case ClientMessage.TypeOneofCase.RoomJoinRequest:
                 res = await OnRoomJoinRequest(client, data.RoomJoinRequest);
+                Console.WriteLine(res is null);
                 break;
             case ClientMessage.TypeOneofCase.RoomLeaveRequest:
                 res = await OnRoomLeaveRequest(client, data.RoomLeaveRequest);
@@ -51,11 +51,13 @@ public static class EventService
 
         if (res is not null)
         {
+            var clients = DataBaseManager.GetClients(client.RoomName);
             Console.WriteLine("Send Response");
             foreach (var r in res)
             {
                 foreach (var c in clients)
                 {
+                    Console.WriteLine("Send Response to " + c.UserID);
                     c.SendAsync(r.ToByteArray()).Forget();
                 }
             }
@@ -124,6 +126,8 @@ public static class EventService
                     client.SendAsync(res2.ToByteArray()).Forget();
                 }
             });
+            
+            Console.WriteLine(res.RoomJoinResponse.Data.PlayerId);
 
             return [res];
         });
