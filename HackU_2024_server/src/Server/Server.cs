@@ -29,11 +29,12 @@ public static class Server
 
     private static async UniTask CloseHandler(Client client)
     {
-        var clients = DataBaseManager.GetClients(client.RoomName).Where(c => c.GlobalUserId != client.GlobalUserId);
-        foreach (var c in clients)
-            if (c.Socket != null)
-                await c.Socket.CloseAsync(WebSocketCloseStatus.Empty, string.Empty, CancellationToken.None);
-        DataBaseManager.RemoveClientData(client);
+        await UniTask.Run(() =>
+        {
+            client.Socket?.Dispose();
+            client.Socket = null;
+            DataBaseManager.UpdateClientData(client);
+        });
     }
 
     private static async UniTask ClientHandler(Client client, byte[] data)

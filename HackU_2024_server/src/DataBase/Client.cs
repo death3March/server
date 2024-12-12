@@ -21,7 +21,7 @@ public partial class Client : IDisposable
 
     public string Nickname { get; set; } = string.Empty;
 
-    public WebSocket? Socket { get; private set; }
+    public WebSocket? Socket { get; set; }
 
     private TcpClient? TcpClient { get; set; }
 

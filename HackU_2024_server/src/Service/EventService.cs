@@ -44,6 +44,10 @@ public static class EventService
                 res = GameService.NextTurn(client, data.TurnEndNotification);
                 break;
             case ClientMessage.TypeOneofCase.OtherMessage:
+                if (data.OtherMessage.Data.Message == "Return")
+                {
+                    res = ReturnPlayer(client, data.OtherMessage);
+                }
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(data));
@@ -51,7 +55,7 @@ public static class EventService
 
         if (res is not null)
         {
-            var clients = DataBaseManager.GetClients(client.RoomName);
+            var clients = DataBaseManager.GetClients(client.RoomName).Where(c => c.Socket != null).ToArray();
             Console.WriteLine("Send Response");
             foreach (var r in res)
             {
@@ -133,7 +137,7 @@ public static class EventService
         });
     }
 
-    private static Room CreateRoom(Client client, string roomName)
+    private static void CreateRoom(Client client, string roomName)
     {
         var room = new Room
         {
@@ -149,9 +153,9 @@ public static class EventService
         };
         Console.WriteLine("Room Created roomName : " + roomName);
         DataBaseManager.AddRoomData(room);
-        return room;
     }
 
+    // ReSharper disable once UnusedParameter.Local
     private static async UniTask<ServerMessage[]?> OnRoomLeaveRequest(Client client, RoomLeaveRequest req)
     {
         return await UniTask.Run<ServerMessage[]?>(() =>
@@ -172,5 +176,46 @@ public static class EventService
             Console.WriteLine("Room Left");
             return null;
         });
+    }
+
+    private static ServerMessage[]? ReturnPlayer(Client client, OtherMessage msg)
+    {
+        var beforeClient = DataBaseManager.GetClients(msg.Data.PlayerId);
+        if (beforeClient.Count is not 1)
+            return null;
+        client.UserID = msg.Data.PlayerId;
+        client.Nickname = beforeClient[0].Nickname;
+        client.RoomName = beforeClient[0].RoomName;
+        DataBaseManager.RemoveClientData(beforeClient[0]);
+        DataBaseManager.UpdateClientData(client);
+        var room = DataBaseManager.GetRoom(client.RoomName);
+        if (room is null)
+            return null;
+        var roomState = new ServerMessage
+        {
+            RoomState = new RoomState
+            {
+                Data = new RoomState.Types.Data
+                {
+                    RoomCode = room.RoomName,
+                    UserIDs = { room.UserIDs },
+                    UserOrder = { room.UserOrder },
+                    UserOtoshidama = { room.UserOtoshidama },
+                    UserPosition = { room.UserPosition },
+                    UserIsAnswered = { room.UserIsAnswered },
+                    UserAnswer = { room.UserAnswer },
+                    QuizData = room.QuizData,
+                    State = (RoomState.Types.RoomState)room.State,
+                    SugorokuMap = room.SugorokuMap,
+                    CurrentTurnPlayerId = room.CurrentTurnPlayerId
+                }
+            }
+        };
+        client.SendAsync(roomState.ToByteArray()).Forget();
+        var res = new ServerMessage
+        {
+            ReturnPlayerId = client.UserID
+        };
+        return [res];
     }
 }
