@@ -106,10 +106,13 @@ public static class GameService
 
     public static ServerMessage[]? NextTurn(Client client, TurnEndNotification req)
     {
+        var room = DataBaseManager.GetRoom(client.RoomName);
+        if (room is null) 
+            return null;
+        if (client.UserID != room.CurrentTurnPlayerId) 
+            return null;
         Console.WriteLine("NextTurn");
         var thisTurnUserID = client.UserID;
-        var room = DataBaseManager.GetRoom(client.RoomName);
-        if (room is null) return null;
         var thisTurnOrder = room.UserOrder[thisTurnUserID];
         var nextTurnOrder = (thisTurnOrder + 1) % room.UserIDs.Count;
         var res = TurnStart(room, nextTurnOrder);
@@ -123,6 +126,7 @@ public static class GameService
         var dice = Roulette(1, 6);
         var thisTurnUserPosition = room.UserPosition[thisTurnUserID] + dice;
         room.UserPosition[thisTurnUserID] = thisTurnUserPosition;
+        room.CurrentTurnPlayerId = thisTurnUserID;
         DataBaseManager.UpdateRoomData(room);
 
         if (thisTurnUserID is null) return null;
