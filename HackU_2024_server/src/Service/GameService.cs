@@ -153,6 +153,7 @@ public static class GameService
                 }
             }
         };
+        res.Add(moveRes);
         switch (room.SugorokuMap.Squares[thisTurnUserPosition])
         {
             case GameStart.Types.Data.Types.Map.Types.squareType.Normal:
@@ -180,12 +181,23 @@ public static class GameService
                 res.Add(otoshidamaRes);
                 break;
             case GameStart.Types.Data.Types.Map.Types.squareType.Furidashi:
-                moveRes.PlayerMovementDisplay.Data.NewPosition = 0;
+                var furidashiRes = new ServerMessage
+                {
+                    PlayerMovementDisplay = new PlayerMovementDisplay
+                    {
+                        Data = new PlayerMovementDisplay.Types.Data
+                        {
+                            PlayerId = thisTurnUserID,
+                            NewPosition = 0
+                        }
+                    }
+                };
+                room.UserPosition[thisTurnUserID] = 0;
+                res.Add(furidashiRes);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(room.SugorokuMap.Squares[thisTurnUserPosition].GetType().ToString());
         }
-        res.Insert(0, moveRes);
         return res.ToArray();
     }
 
