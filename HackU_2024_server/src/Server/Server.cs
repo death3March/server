@@ -31,6 +31,10 @@ public static class Server
     {
         await UniTask.Run(() =>
         {
+            if(client.RoomName == string.Empty)
+            {
+                DataBaseManager.RemoveClientData(client);
+            }
             client.Socket?.Dispose();
             client.Socket = null;
             DataBaseManager.UpdateClientData(client);
