@@ -37,7 +37,7 @@ public static class EventService
                     var resultRes = QuizService.QuizResult(client.RoomName, correctUsers);
                     if (resultRes is not null)
                     {
-                        res = res?.Concat(resultRes).ToArray();
+                        res = res is null ? resultRes : res.Concat(resultRes).ToArray();
                     }
                 }
                 break;

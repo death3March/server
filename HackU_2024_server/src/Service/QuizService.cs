@@ -118,7 +118,7 @@ public static class QuizService
         var room = DataBaseManager.GetRoom(roomName);
         if (room is null)
             return null;
-        if (room.State == Room.RoomState.Gaming)
+        if (room.State != Room.RoomState.Gaming)
             return null;
         Console.WriteLine("QuizResult");
         var res = new ServerMessage[room.UserIDs.Count];
