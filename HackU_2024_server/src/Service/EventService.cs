@@ -6,6 +6,7 @@ namespace HackU_2024_server.Service;
 
 public static class EventService
 {
+    private const int SendDelay = 500;
     public static async UniTask OnReceiveAsync(Client client, ClientMessage data)
     {
         Console.WriteLine(data.TypeCase.ToString());
@@ -64,6 +65,8 @@ public static class EventService
                     Console.WriteLine("Send Response to " + c.UserID);
                     c.SendAsync(r.ToByteArray()).Forget();
                 }
+
+                await Task.Delay(SendDelay);
             }
         }
     }
