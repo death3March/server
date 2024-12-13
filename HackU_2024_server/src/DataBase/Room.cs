@@ -25,4 +25,5 @@ public class Room
     public QuizStart? QuizData { get; set; } = null;
     public RoomState State { get; set; } = RoomState.Waiting;
     public GameStart.Types.Data.Types.Map? SugorokuMap { get; set; } = null;
+    public string CurrentTurnPlayerId { get; set; } = string.Empty;
 }

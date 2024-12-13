@@ -73,6 +73,7 @@ namespace HackU_2024_server.Tables
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("QuizData")),
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("State")),
                     new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("SugorokuMap")),
+                    new MasterMemory.Meta.MetaProperty(typeof(Room).GetProperty("CurrentTurnPlayerId")),
                 },
                 new MasterMemory.Meta.MetaIndex[]{
                     new MasterMemory.Meta.MetaIndex(new System.Reflection.PropertyInfo[] {

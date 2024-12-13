@@ -12,6 +12,8 @@ message ServerMessage {
     GameStart gameStart = 8;
     GameEnd gameEnd = 9;
     RoomJoinResponse roomJoinResponse = 10;
+    string ReturnPlayerId = 11;
+    RoomState roomState = 12;
   }
 }
 
@@ -132,5 +134,31 @@ message RoomJoinResponse {
     string playerId = 1;
     string nickname = 2;
     string roomCode = 3;
+  }
+}
+
+message RoomState {
+  string type = 1; // "ROOM_STATE"
+  Data data = 2;
+  enum RoomState
+  {
+      Waiting = 0;
+      Gaming = 1;
+      Result = 2;
+  }
+
+  message Data {
+    string roomCode = 1;
+    repeated string userIDs = 2;
+    map<string, int32> userOrder = 3;
+    map<string, int32> userOtoshidama = 4;
+    map<string, int32> userPosition = 5;
+    map<string, bool> userIsAnswered = 6;
+    map<string, int32> userIsAnsweredOrder = 7;
+    map<string, string> userAnswer = 8;
+    QuizStart quizData = 9;
+    RoomState state = 10;
+    GameStart.Data.Map sugorokuMap = 11;
+    string CurrentTurnPlayerId = 12;
   }
 }
