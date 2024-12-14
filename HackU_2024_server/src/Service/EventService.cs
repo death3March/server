@@ -95,7 +95,7 @@ public static class EventService
             client.Nickname = req.Data.Nickname;
             DataBaseManager.UpdateClientData(client);
             Console.WriteLine("Room Joined");
-            var res = new ServerMessage
+            var clientRes = new ServerMessage
             {
                 RoomJoinResponse = new RoomJoinResponse
                 {
@@ -107,28 +107,22 @@ public static class EventService
                     }
                 }
             };
-            client.SendAsync(res.ToByteArray()).Forget();
-            Console.WriteLine("player id : " + ServerMessage.Parser.ParseFrom(res.ToByteArray()).RoomJoinResponse.Data.PlayerId);
+            client.SendAsync(clientRes.ToByteArray()).Forget();
 
-            UniTask.Run(() =>
-            {
-                var alreadyJoinedClients = DataBaseManager.GetClients(roomName)
-                    .Where(c => c.GlobalUserId != client.GlobalUserId);
-                foreach (var c in alreadyJoinedClients)
+            var alreadyJoinedClients = DataBaseManager.GetClients(roomName)
+                .Where(c => c.GlobalUserId != client.GlobalUserId);
+            var res = alreadyJoinedClients
+                .Select(c => new ServerMessage
                 {
-                    var res2 = new ServerMessage
+                    RoomMemberData = new RoomMemberData
                     {
-                        RoomMemberData = new RoomMemberData
-                        {
-                            PlayerId = c.UserID,
-                            Nickname = c.Nickname
-                        }
-                    };
-                    client.SendAsync(res2.ToByteArray()).Forget();
-                }
-            });
+                        PlayerId = c.UserID,
+                        Nickname = c.Nickname
+                    }
+                })
+                .ToArray();
 
-            return [res];
+            return res;
         });
     }
 
