@@ -18,8 +18,6 @@ public static class EventService
                 break;
             case ClientMessage.TypeOneofCase.RoomJoinRequest:
                 res = await OnRoomJoinRequest(client, data.RoomJoinRequest);
-                await Task.Delay(1000);
-                Console.WriteLine(res is null);
                 break;
             case ClientMessage.TypeOneofCase.RoomLeaveRequest:
                 res = await OnRoomLeaveRequest(client, data.RoomLeaveRequest);
@@ -58,7 +56,6 @@ public static class EventService
         if (res is not null)
         {
             var clients = DataBaseManager.GetClients(client.RoomName).Where(c => c.Socket != null).ToArray();
-            Console.WriteLine("Send Response");
             foreach (var r in res)
             {
                 foreach (var c in clients)
@@ -121,21 +118,15 @@ public static class EventService
                 {
                     var res2 = new ServerMessage
                     {
-                        RoomJoinResponse = new RoomJoinResponse
+                        RoomMemberData = new RoomMemberData
                         {
-                            Data = new RoomJoinResponse.Types.Data
-                            {
-                                RoomCode = roomName,
-                                PlayerId = c.UserID,
-                                Nickname = c.Nickname
-                            }
+                            PlayerId = c.UserID,
+                            Nickname = c.Nickname
                         }
                     };
                     client.SendAsync(res2.ToByteArray()).Forget();
                 }
             });
-            
-            Console.WriteLine(res.RoomJoinResponse.Data.PlayerId);
 
             return [res];
         });

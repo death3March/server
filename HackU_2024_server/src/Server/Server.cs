@@ -43,6 +43,12 @@ public static class Server
             client.Socket?.Dispose();
             client.Socket = null;
             DataBaseManager.UpdateClientData(client);
+            var room = DataBaseManager.GetRoom(client.RoomName);
+            var count = room?.UserIDs.Select(u => client.UserID).Count();
+            if (count != 0) return;
+            Console.WriteLine("Room Removed");
+            DataBaseManager.RemoveClientData(client);
+            if(room is not null) DataBaseManager.RemoveRoomData(room);
         });
     }
     private static async UniTask HealthCheckHandler()
