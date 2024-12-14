@@ -1,0 +1,16 @@
+﻿name: Deploy to Server at Home
+on:
+  push:
+    branches: [ "release" ]
+
+jobs:
+  deploy:
+    runs-on: [ self-hosted, linux ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout And Build
+        run: 
+          - docker-compose down
+          - docker-compose build
+          - docker-compose up -d
