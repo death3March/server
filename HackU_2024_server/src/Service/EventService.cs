@@ -109,9 +109,8 @@ public static class EventService
             };
             client.SendAsync(clientRes.ToByteArray()).Forget();
 
-            var alreadyJoinedClients = DataBaseManager.GetClients(roomName)
-                .Where(c => c.GlobalUserId != client.GlobalUserId);
-            var res = alreadyJoinedClients
+            var clients = DataBaseManager.GetClients(roomName);
+            var res = clients
                 .Select(c => new ServerMessage
                 {
                     RoomMemberData = new RoomMemberData
