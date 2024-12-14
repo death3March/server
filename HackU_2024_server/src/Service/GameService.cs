@@ -89,7 +89,7 @@ public static class GameService
     {
         var squares = new RepeatedField<GameStart.Types.Data.Types.Map.Types.squareType>();
         
-        for (var i = 0; i < 40; i++)
+        for (var i = 0; i < 100; i++)
         {
             var num = new Random().Next(0, 10);
             switch (num)
