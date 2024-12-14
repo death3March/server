@@ -18,6 +18,7 @@ public static class EventService
                 break;
             case ClientMessage.TypeOneofCase.RoomJoinRequest:
                 res = await OnRoomJoinRequest(client, data.RoomJoinRequest);
+                await Task.Delay(1000);
                 Console.WriteLine(res is null);
                 break;
             case ClientMessage.TypeOneofCase.RoomLeaveRequest:
