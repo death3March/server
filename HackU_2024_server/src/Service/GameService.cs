@@ -237,6 +237,11 @@ public static class GameService
                 }
             }
         };
+        UniTask.Run(async () =>
+        {
+            await Task.Delay(5000);
+            DataBaseManager.RemoveRoomData(room);
+        });
         return [res];
     }
 }
