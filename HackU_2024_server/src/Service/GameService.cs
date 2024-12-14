@@ -88,10 +88,25 @@ public static class GameService
     private static GameStart.Types.Data.Types.Map GenerateMap()
     {
         var squares = new RepeatedField<GameStart.Types.Data.Types.Map.Types.squareType>();
+        
         for (var i = 0; i < 40; i++)
         {
-            var num = new Random().Next(0, 4);
-            squares.Add((GameStart.Types.Data.Types.Map.Types.squareType)num);
+            var num = new Random().Next(0, 10);
+            switch (num)
+            {
+                case < 6:
+                    squares.Add(GameStart.Types.Data.Types.Map.Types.squareType.Quiz);
+                    break;
+                case < 8:
+                    squares.Add(GameStart.Types.Data.Types.Map.Types.squareType.Otoshidama);
+                    break;
+                case < 9:
+                    squares.Add(GameStart.Types.Data.Types.Map.Types.squareType.Furidashi);
+                    break;
+                default:
+                    squares.Add(GameStart.Types.Data.Types.Map.Types.squareType.Normal);
+                    break;
+            }
         }
         
         squares[0] = GameStart.Types.Data.Types.Map.Types.squareType.Normal;
